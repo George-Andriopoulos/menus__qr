@@ -19,10 +19,10 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
   }
 
   return (
-    <header className="text-center pt-16 pb-8 mb-6 md:pt-8">
+    <header className="text-center pt-16 pb-8 mb-6 md:pt-8 ">
       {/* Render title only if it exists */}
       {title && (
-        <h1 className="text-4xl sm:text-5xl font-bold text-yellow-400">
+        <h1 className="text-4xl md:mb-10 sm:text-5xl font-bold text-yellow-400">
           {title}
         </h1>
       )}

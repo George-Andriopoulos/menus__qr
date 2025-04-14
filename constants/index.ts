@@ -159,9 +159,9 @@ export const mockMenuCategories: MenuCategory[] = [
  */
 export const translations: Translations = {
   en: {
-    headerTitle: "Little Lemon",
-    headerSubtitle: "A Taste of the Mediterranean",
-    menuCategories: "Menu Categories",
+    headerTitle: "Monk",
+    headerSubtitle: "Coffe that's always the way you like ☕",
+    menuCategories: "Menu ",
     language: "Language",
     ingredients: "Ingredients",
     price: "Price",
@@ -170,9 +170,9 @@ export const translations: Translations = {
     viewMenu: "View Menu",
   },
   gr: {
-    headerTitle: "Μικρό Λεμόνι",
-    headerSubtitle: "Γεύση Μεσογείου",
-    menuCategories: "Κατηγορίες Μενού",
+    headerTitle: "Monk",
+    headerSubtitle: "Coffe that's always the way you like ☕",
+    menuCategories: " Μενού",
     language: "Γλώσσα",
     ingredients: "Συστατικά",
     price: "Τιμή",
