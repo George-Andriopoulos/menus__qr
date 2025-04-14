@@ -2,44 +2,49 @@
 
 /**
  * Represents a single item on the menu.
+ * Prices are now optional specific fields.
  */
 export interface MenuItem {
   id: string;
-  name: { en: string; gr: string }; // Name in English and Greek
-  description: { en: string; gr: string }; // Description/Ingredients in English and Greek
-  price: string; // Changed price to string to accommodate variations like "€2.20 / €2.80" or "+ €1.00"
-  image: string; // Image URL for the item (optional, could be used in modal)
+  name: { en: string; gr: string };
+  description: { en: string; gr: string };
+  priceSingle?: string; // Optional: Price for single size/version
+  priceDouble?: string; // Optional: Price for double size/version
+  priceFixed?: string; // Optional: Price for items with only one price
+  image: string;
 }
 
 /**
- * Represents a category in the menu (e.g., Starters, Mains).
+ * Represents a category in the menu.
  */
 export interface MenuCategory {
   id: string;
-  name: { en: string; gr: string }; // Category name in English and Greek
-  image: string; // Representative image URL for the category card
-  items: MenuItem[]; // Array of menu items belonging to this category
+  name: { en: string; gr: string };
+  image: string;
+  items: MenuItem[];
 }
 
 /**
  * Defines the structure for translation strings.
- * Uses keyof typeof translations.en for type safety in the t function.
  */
 export interface TranslationSet {
   headerTitle: string;
   headerSubtitle: string;
   menuCategories: string;
   language: string;
-  ingredients: string; // Label for description field in modal
-  price: string; // Label for price field in modal
+  ingredients: string;
+  price: string; // General price label (might be less used now)
   close: string;
   orderNow: string;
   viewMenu: string;
+  // Added keys for modal table headers
+  beverages: string;
+  single: string;
+  double: string;
 }
 
 /**
- * Defines the structure for the main translations object,
- * mapping language codes ('en', 'gr') to their respective TranslationSet.
+ * Defines the structure for the main translations object.
  */
 export interface Translations {
   en: TranslationSet;

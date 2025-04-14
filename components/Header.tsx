@@ -26,14 +26,15 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
         <Image
           src="/monk/logo.webp"
           alt="Logo"
-          width={200}
-          height={200}
-          className="mx-auto mb-4"
+          width={250}
+          height={250}
+          quality={100}
+          className="mx-auto "
         />
       )}
       {/* Render subtitle only if it exists */}
       {subtitle && (
-        <h3 className="text-lg sm:text-xl text-gray-300 mt-2 px-2">
+        <h3 className="text-lg sm:text-xl text-[#fffdfe] mt-2 px-2">
           {subtitle}
         </h3>
       )}

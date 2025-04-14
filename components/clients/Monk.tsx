@@ -61,7 +61,7 @@ const Monk = () => {
   // --- Render ---
   return (
     // Main container div
-    <div className="min-h-screen text-gray-100  antialiased bg-[#ae997a]">
+    <div className="min-h-screen text-[#fffdfe]  antialiased bg-[#ae997a]">
       {/* Inner container for layout */}
       <div className="container mx-auto px-3 sm:px-4 pb-12 relative">
         {/* Language Selector Dropdown */}
@@ -108,7 +108,7 @@ const Monk = () => {
         />
 
         {/* Image Carousel Section Component */}
-        <ImageCarousel images={mockCarouselImages} />
+        {/* <ImageCarousel images={mockCarouselImages} /> */}
 
         {/* Menu Categories Section Title */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-6 md:mb-8 text-center">
