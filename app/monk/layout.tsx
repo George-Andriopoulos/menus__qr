@@ -1,15 +1,15 @@
 // app/monk/layout.tsx
 import type { Metadata } from "next";
-// Import Montserrat from next/font/google
-import { Montserrat } from "next/font/google";
+// Import Roboto_Slab from next/font/google
+import { Roboto_Slab } from "next/font/google";
 import "@/app/globals.css"; // Ensure global styles are imported
 
-// Initialize the Montserrat font with desired weights and subsets
-const montserrat = Montserrat({
+// Initialize the Roboto_Slab font with desired weights and subsets
+const roboto_slab = Roboto_Slab({
   weight: ["300", "400", "500", "600", "700"], // Include various weights
-  subsets: ["latin", "cyrillic"], // Include Latin and Greek subsets
+  subsets: ["latin", "greek"], // Include Latin and Greek subsets
   display: "swap", // Use 'swap' for better font loading performance
-  // variable: '--font-montserrat', // Optional: Define CSS variable if needed for Tailwind config
+  variable: "--font-roboto-slab", // Optional: Define CSS variable if needed
 });
 
 // Metadata remains the same
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 };
 
 /**
- * Layout component for the /monk route segment using Montserrat font.
- * Returns a div wrapping children and applies the Montserrat font class to the div.
+ * Layout component for the /monk route segment using Roboto Slab font.
+ * Returns a div wrapping children and applies the Roboto Slab font class to the div.
  * @param children - The page component for the /monk route.
  */
 export default function MonkLayout({
@@ -28,9 +28,10 @@ export default function MonkLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Apply the Montserrat font className to the wrapping div
+  // Apply the Roboto Slab font className to the wrapping div
   return (
-    <div className={`${montserrat.className} antialiased`}>
+    // Using roboto_slab.className to apply the font
+    <div className={`${roboto_slab.className} antialiased`}>
       {/* Render the page content (app/monk/page.tsx) */}
       {children}
     </div>

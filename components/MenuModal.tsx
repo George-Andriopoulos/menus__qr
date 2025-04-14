@@ -62,7 +62,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
       open={isOpen}
       onOpenChange={onClose}>
       {/* User's specified styling for DialogContent */}
-      <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl bg-[url('/monk/monk_modal_bg.webp')] bg-cover bg-center bg-no-repeat border-gray-700 text-[#fffdfe] max-h-[85vh] sm:max-h-[80vh] flex flex-col rounded-lg p-0">
+      <DialogContent className="w-[95vw] max-w-lg  sm:max-w-xl bg-[url('/monk/monk_modal_bg.webp')] bg-cover bg-center bg-no-repeat border-gray-700 text-[#fffdfe] max-h-[85vh] sm:max-h-[80vh] flex flex-col rounded-lg p-0">
         {/* Modal Header */}
         <DialogHeader className="border-b border-gray-700 p-4 flex-shrink-0">
           {/* User's specified styling for DialogTitle */}
