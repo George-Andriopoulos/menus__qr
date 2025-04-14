@@ -112,7 +112,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "cold-beverages",
     name: { en: "Cold Beverages", gr: "Κρύα Ροφήματα" },
-    image: "https://placehold.co/400x300/63a1c7/ffffff?text=Cold+Drinks",
+    image: "/monk/cold_brew.webp",
     items: [
       {
         id: "cb1",
@@ -176,7 +176,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "soft-drinks-water",
     name: { en: "Soft Drinks & Water", gr: "Αναψυκτικά & Νερά" },
-    image: "https://placehold.co/400x300/76c7c0/ffffff?text=Soft+Drinks",
+    image: "/monk/soft_drinks.webp",
     items: [
       {
         id: "sdw1",
@@ -332,7 +332,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "tea-route",
     name: { en: "Tea Route Recommends", gr: "Προτάσεις Τσαγιού" },
-    image: "https://placehold.co/400x300/8fbc8f/ffffff?text=Tea+Route",
+    image: "/monk/tea.webp",
     items: [
       {
         id: "tr1",
@@ -440,7 +440,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "snacks",
     name: { en: "Snacks", gr: "Σνακς" },
-    image: "https://placehold.co/400x300/f5c77e/ffffff?text=Snacks",
+    image: "/monk/snacks.webp",
     items: [
       {
         id: "sn1",
@@ -497,7 +497,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "puff-pastry",
     name: { en: "Puff Pastry", gr: "Σφολιάτες" },
-    image: "https://placehold.co/400x300/d2b48c/ffffff?text=Puff+Pastry",
+    image: "/monk/puff_pastry.webp",
     items: [
       {
         id: "pp1",
@@ -547,7 +547,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "sweet-pastry",
     name: { en: "Sweet Pastry", gr: "Γλυκές Ζύμες" },
-    image: "https://placehold.co/400x300/ffb6c1/ffffff?text=Sweets",
+    image: "/monk/croissants.webp",
     items: [
       {
         id: "sp1",
@@ -569,7 +569,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "beers",
     name: { en: "Beers", gr: "Μπύρες" },
-    image: "https://placehold.co/400x300/f4a460/ffffff?text=Beers",
+    image: "/monk/beer.webp",
     items: [
       {
         id: "b1",
@@ -612,7 +612,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "spirits",
     name: { en: "Spirits", gr: "Ποτά" },
-    image: "https://placehold.co/400x300/8a2be2/ffffff?text=Spirits",
+    image: "/monk/spirits.webp",
     items: [
       {
         id: "spt1",
