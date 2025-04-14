@@ -1,7 +1,4 @@
-// components/clients/Monk.tsx
-
-"use client"; // Add this if using Next.js App Router
-
+"use client";
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
@@ -88,7 +85,6 @@ const Monk = () => {
                 placeholder={t("language")}
                 className="text-gray-200"
               />
-              <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 text-gray-400 flex-shrink-0" />
             </SelectTrigger>
             <SelectContent className="bg-gray-800 border-gray-700 text-xs sm:text-sm">
               <SelectItem
