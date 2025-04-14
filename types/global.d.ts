@@ -1,3 +1,5 @@
+// types/index.ts
+
 /**
  * Represents a single item on the menu.
  */
@@ -5,7 +7,7 @@ export interface MenuItem {
   id: string;
   name: { en: string; gr: string }; // Name in English and Greek
   description: { en: string; gr: string }; // Description/Ingredients in English and Greek
-  price: number;
+  price: string; // Changed price to string to accommodate variations like "€2.20 / €2.80" or "+ €1.00"
   image: string; // Image URL for the item (optional, could be used in modal)
 }
 
@@ -28,8 +30,8 @@ export interface TranslationSet {
   headerSubtitle: string;
   menuCategories: string;
   language: string;
-  ingredients: string;
-  price: string;
+  ingredients: string; // Label for description field in modal
+  price: string; // Label for price field in modal
   close: string;
   orderNow: string;
   viewMenu: string;

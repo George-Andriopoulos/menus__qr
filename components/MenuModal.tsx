@@ -1,13 +1,14 @@
 // components/MenuModal.tsx
 import React from "react";
+// Make sure Dialog imports are correct for your setup (e.g., shadcn/ui)
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "@/components/ui/dialog"; // Adjust path if needed
-import { Button } from "@/components/ui/button"; // Adjust path if needed
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import type { MenuCategory, TranslationSet } from "@/types"; // Adjust path if needed
 
 interface MenuModalProps {
@@ -15,11 +16,12 @@ interface MenuModalProps {
   onClose: () => void;
   isOpen: boolean;
   lang: "en" | "gr";
-  t: (key: keyof TranslationSet) => string; // Use TranslationSet keys
+  t: (key: keyof TranslationSet) => string;
 }
 
 /**
  * Modal component displaying items for a selected menu category.
+ * Handles string prices correctly.
  * @param category - The selected menu category data (or null).
  * @param onClose - Function to call when the modal should close.
  * @param isOpen - Boolean indicating if the modal is open.
@@ -66,14 +68,18 @@ const MenuModal: React.FC<MenuModalProps> = ({
                   {/* Display translated item name, provide default */}
                   {item.name[lang] || item.name["en"]}
                 </h4>
-                <p className="text-xs sm:text-sm text-gray-400 mt-1">
-                  {/* Display translated ingredients label and description, provide defaults */}
-                  {t("ingredients")}:{" "}
-                  {item.description[lang] || item.description["en"]}
-                </p>
+                {/* Conditionally render description only if it exists and has content */}
+                {(item.description[lang] || item.description["en"]) && (
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                    {/* Use the translation key for the label */}
+                    {t("ingredients")}:{" "}
+                    {item.description[lang] || item.description["en"]}
+                  </p>
+                )}
               </div>
+              {/* Display price string directly */}
               <p className="text-yellow-400 font-bold text-base sm:text-lg flex-shrink-0 self-end sm:self-center">
-                ${item.price.toFixed(2)}
+                {item.price}
               </p>
             </div>
           ))}

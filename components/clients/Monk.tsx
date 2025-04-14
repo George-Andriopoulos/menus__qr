@@ -61,7 +61,7 @@ const Monk = () => {
   // --- Render ---
   return (
     // Main container div
-    <div className="min-h-screen text-gray-100 font-sans antialiased bg-[url('/monk/monk_bg.webp')] bg-cover bg-center bg-no-repeat">
+    <div className="min-h-screen text-gray-100  antialiased bg-[#ae997a]">
       {/* Inner container for layout */}
       <div className="container mx-auto px-3 sm:px-4 pb-12 relative">
         {/* Language Selector Dropdown */}
