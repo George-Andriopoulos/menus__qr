@@ -699,8 +699,8 @@ export const mockMenuCategories: MenuCategory[] = [
 export const translations: Translations = {
   en: {
     headerTitle: "Monk",
-    headerSubtitle: "Coffee that's always the way you like ☕",
-    menuCategories: "Menu Categories",
+    headerSubtitle: "Coffee that's always the way you like",
+    menuCategories: "Menu ",
     language: "Language",
     ingredients: "Ingredients", // Changed from Description
     price: "Price", // General label
@@ -713,8 +713,8 @@ export const translations: Translations = {
   },
   gr: {
     headerTitle: "Monk", // Needs Greek translation if desired
-    headerSubtitle: "Καφές όπως πάντα σου αρέσει ☕", // Needs Greek translation if desired
-    menuCategories: "Κατηγορίες Μενού",
+    headerSubtitle: "Coffee that's always the way you like", // Needs Greek translation if desired
+    menuCategories: " Μενού",
     language: "Γλώσσα",
     ingredients: "Συστατικά", // Changed from Περιγραφή
     price: "Τιμή", // General label

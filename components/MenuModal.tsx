@@ -9,13 +9,9 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 // Ensure PriceInfo is imported from your types file
-import type {
-  MenuCategory,
-  MenuItem,
-  PriceInfo,
-  TranslationSet,
-} from "@/types";
+
 import { cn } from "@/lib/utils"; // Import cn
+import { MenuCategory, TranslationSet } from "@/types/global";
 
 interface MenuModalProps {
   category: MenuCategory | null;
