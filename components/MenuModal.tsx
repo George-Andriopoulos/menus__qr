@@ -58,17 +58,17 @@ const MenuModal: React.FC<MenuModalProps> = ({
     <Dialog
       open={isOpen}
       onOpenChange={onClose}>
-      <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl bg-gray-900 border-gray-700 text-gray-100 max-h-[85vh] sm:max-h-[80vh] flex flex-col rounded-lg p-0">
+      <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl   bg-[url('/monk/monk_modal_bg.webp')] bg-cover bg-center bg-no-repeat text-[#fffdfe] max-h-[85vh] sm:max-h-[80vh] flex flex-col rounded-lg p-0">
         {/* Modal Header */}
         <DialogHeader className="border-b border-gray-700 p-4 flex-shrink-0">
-          <DialogTitle className="text-xl sm:text-2xl font-semibold text-yellow-400 text-center sm:text-left">
+          <DialogTitle className="text-xl sm:text-2xl font-semibold text-[#ae997a] text-center ">
             {category.name[lang] || category.name["en"]}
           </DialogTitle>
         </DialogHeader>
 
         {/* Optional Headers for Price Columns */}
         {showSingleDoubleHeaders && (
-          <div className="grid grid-cols-3 gap-x-3 sm:gap-x-4 px-3 sm:px-4 pt-3 pb-2 text-xs sm:text-sm font-semibold text-gray-400 border-b border-gray-700 sticky top-0 bg-gray-900 z-10">
+          <div className="grid grid-cols-3 bg-[#ae997a] gap-x-3 sm:gap-x-4 px-3 sm:px-4 pt-3 pb-2 text-xs sm:text-sm font-semibold text-[#fffdfe]  sticky top-0  z-10">
             <div className="col-span-1 uppercase tracking-wider">
               {/* t('beverages') */}
             </div>
@@ -118,7 +118,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
               {showSingleDoubleHeaders ? (
                 <>
                   {/* Column 2: Single Price / Base Price */}
-                  <div className="col-span-1 text-right text-sm sm:text-base text-yellow-400 font-medium pr-1">
+                  <div className="col-span-1 text-right text-sm sm:text-base text-[#fffdfe] font-medium pr-1">
                     {formatPrice(
                       item.price.single ?? item.price.base,
                       item.price.unit,
@@ -126,13 +126,13 @@ const MenuModal: React.FC<MenuModalProps> = ({
                     )}
                   </div>
                   {/* Column 3: Double Price */}
-                  <div className="col-span-1 text-right text-sm sm:text-base text-yellow-400 font-medium pr-1">
+                  <div className="col-span-1 text-right text-sm sm:text-base text-[#fffdfe] font-medium pr-1">
                     {formatPrice(item.price.double, item.price.unit)}
                   </div>
                 </>
               ) : (
                 // Flex Item 2: Fixed Price (when not using columns)
-                <p className="text-yellow-400 font-bold text-base sm:text-lg flex-shrink-0">
+                <p className="text-[#fffdfe]  font-bold text-base sm:text-lg flex-shrink-0">
                   {/* Display base price directly */}
                   {formatPrice(
                     item.price.base,
@@ -152,9 +152,9 @@ const MenuModal: React.FC<MenuModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <DialogFooter className="border-t border-gray-700 p-3 sm:p-4 flex-shrink-0">
+        <DialogFooter className=" p-3 sm:p-4 flex-shrink-0">
           <Button
-            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 w-full sm:w-auto"
+            className="bg-[#ae997a] hover:bg-[#ae997a]/80 text-gray-900 w-full sm:w-auto"
             onClick={onClose}
             size="lg">
             {t("close")}

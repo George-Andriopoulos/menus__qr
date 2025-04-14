@@ -29,7 +29,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   return (
     <Card
       // Keep fixed height, relative positioning, and overflow hidden
-      className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.03] cursor-pointer group bg-gray-800 border-gray-700 active:scale-[0.98] relative h-48"
+      className="overflow-hidden text-[#fffdfe] transition-all duration-300 hover:shadow-xl hover:scale-[1.03] cursor-pointer group bg-gray-800 border-gray-700 active:scale-[0.98] relative h-48"
       onClick={() => onSelect(category)}
       role="button"
       tabIndex={0}
@@ -51,7 +51,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
       <CardContent className="absolute bottom-0 left-0 right-0 z-10 p-2 sm:p-3 text-center bg-gradient-to-t from-black/80 via-black/40 to-transparent">
         {" "}
         {/* Gradient background */}
-        <h3 className="text-base sm:text-lg font-semibold text-white drop-shadow-md">
+        <h3 className="text-base sm:text-lg font-semibold text-[#fffdfe] drop-shadow-md">
           {" "}
           {/* Ensure text is visible */}
           {categoryName}
