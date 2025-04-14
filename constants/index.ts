@@ -17,7 +17,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "hot-beverages",
     name: { en: "Hot Beverages", gr: "Ζεστά Ροφήματα" },
-    image: "https://placehold.co/400x300/a5522a/ffffff?text=Hot+Drinks",
+    image: "/monk/hot_drinks.webp",
     items: [
       {
         id: "hb1",

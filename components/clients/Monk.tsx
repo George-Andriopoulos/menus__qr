@@ -1,8 +1,11 @@
+// components/clients/Monk.tsx
+
 "use client";
+
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-// Import UI Components (adjust paths as needed, assuming '@' alias)
+// Import UI Components
 import {
   Select,
   SelectContent,
@@ -11,25 +14,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
+// Removed ChevronDown import as it's not explicitly used in SelectTrigger anymore
 
-// Import Custom Components (adjust paths as needed, assuming '@' alias)
-import Header from "@/components/Header"; // Assuming Header is in components/Header.tsx
-import ImageCarousel from "@/components/ImageCarousel"; // Assuming ImageCarousel is in components/ImageCarousel.tsx
-import CategoryCard from "@/components/CategoryCard"; // Assuming CategoryCard is in components/CategoryCard.tsx
-import MenuModal from "@/components/MenuModal"; // Assuming MenuModal is in components/MenuModal.tsx
+// Import Custom Components
+import Header from "@/components/Header";
+import CategoryCard from "@/components/CategoryCard";
+import MenuModal from "@/components/MenuModal";
 
-// Import Constants and Types (adjust paths as needed, assuming '@' alias)
-import {
-  mockCarouselImages,
-  mockMenuCategories,
-  translations,
-} from "@/constants";
+// Import Constants and Types (Standardized Path)
+import { mockMenuCategories, translations } from "@/constants";
 import { MenuCategory, TranslationSet } from "@/types/global";
+// Standardize type import path assuming types are in @/types/index.ts
 
 /**
- * Main application component logic, now encapsulated in Monk.
- * Handles state management, language selection, modal display, and renders the menu layout.
+ * Main application component logic, encapsulated in Monk.
  */
 const Monk = () => {
   // --- State ---
@@ -38,7 +36,6 @@ const Monk = () => {
     null
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // Initialize menuData directly from constants
   const [menuData, setMenuData] = useState<MenuCategory[]>(mockMenuCategories);
 
   // --- Translation Function ---
@@ -54,30 +51,28 @@ const Monk = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    // Delay resetting selectedCategory to allow modal fade-out animation
     setTimeout(() => setSelectedCategory(null), 300);
   };
 
   // --- Render ---
   return (
-    // Main container div
-    <div className="min-h-screen text-[#fffdfe]  antialiased bg-[#ae997a]">
-      {/* Inner container for layout */}
+    // Main container div - Using user's specified colors
+    <div className="min-h-screen text-[#fffdfe] antialiased bg-[#ae997a]">
+      {/* Inner container */}
       <div className="container mx-auto px-3 sm:px-4 pb-12 relative">
-        {/* Language Selector Dropdown */}
+        {/* Language Selector */}
         <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20">
           <Select
             value={language}
             onValueChange={(value: "en" | "gr") => {
               setLanguage(value);
-              // Add logic here if data needs re-fetching based on language
             }}>
             <SelectTrigger
               className={cn(
                 "w-[110px] sm:w-[140px] h-9 sm:h-10",
                 "bg-gray-800/80 backdrop-blur-sm border-gray-700 text-gray-200",
                 "focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950 focus:ring-yellow-500 focus:border-yellow-500",
-                "flex items-center justify-between",
+                // Removed flex/justify-between as SelectTrigger handles internal layout
                 "rounded-md shadow-sm text-xs sm:text-sm"
               )}
               aria-label={t("language")}>
@@ -85,6 +80,7 @@ const Monk = () => {
                 placeholder={t("language")}
                 className="text-gray-200"
               />
+              {/* Default arrow is rendered by SelectTrigger */}
             </SelectTrigger>
             <SelectContent className="bg-gray-800 border-gray-700 text-xs sm:text-sm">
               <SelectItem
@@ -101,23 +97,25 @@ const Monk = () => {
           </Select>
         </div>
 
-        {/* Header Section Component */}
+        {/* Header */}
         <Header
           title={t("headerTitle")}
           subtitle={t("headerSubtitle")}
         />
 
-        {/* Image Carousel Section Component */}
+        {/* Carousel (Currently commented out in user's code) */}
         {/* <ImageCarousel images={mockCarouselImages} /> */}
 
-        {/* Menu Categories Section Title */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-6 md:mb-8 text-center">
+        {/* Menu Title */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center drop-shadow-md">
+          {" "}
+          {/* Changed text color slightly */}
           {t("menuCategories")}
         </h2>
 
         {/* Menu Grid */}
-        <div className="grid grid-cols-2 mt-14 place-items-center  sm:grid-cols-2 lg:gap-y-14 lg:grid-cols-3 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-          {/* Map through menu data to render category cards */}
+        {/* Removed place-items-center, adjusted gaps/margin */}
+        <div className="grid grid-cols-2 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {menuData.map((category) => (
             <CategoryCard
               key={category.id}
@@ -127,15 +125,16 @@ const Monk = () => {
               t={t}
             />
           ))}
-          {/* Display message if no menu data */}
           {menuData.length === 0 && (
-            <p className="col-span-full text-center text-gray-500">
+            <p className="col-span-full text-center text-gray-200">
+              {" "}
+              {/* Adjusted color */}
               No menu categories available.
             </p>
           )}
         </div>
 
-        {/* Menu Modal Component (conditionally rendered with animation) */}
+        {/* Menu Modal */}
         <AnimatePresence>
           {isModalOpen && selectedCategory && (
             <MenuModal
@@ -152,5 +151,4 @@ const Monk = () => {
   );
 };
 
-// Export the component as default
 export default Monk;
