@@ -70,27 +70,25 @@ const Monk = () => {
             <SelectTrigger
               className={cn(
                 "w-[110px] sm:w-[140px] h-9 sm:h-10",
-                "bg-gray-800/80 backdrop-blur-sm border-gray-700 text-gray-200",
-                "focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950 focus:ring-yellow-500 focus:border-yellow-500",
-                // Removed flex/justify-between as SelectTrigger handles internal layout
-                "rounded-md shadow-sm text-xs sm:text-sm"
+                "bg-[#fffdfe] backdrop-blur-sm border-[#ae997a] text-[#ae997a]",
+                "rounded-md shadow-sm text-xs sm:text-sm",
+                "focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none"
               )}
               aria-label={t("language")}>
               <SelectValue
                 placeholder={t("language")}
                 className="text-gray-200"
               />
-              {/* Default arrow is rendered by SelectTrigger */}
             </SelectTrigger>
-            <SelectContent className="bg-gray-800 border-gray-700 text-xs sm:text-sm">
+            <SelectContent className="bg-[#fffdfe] border-[#ae997a] text-xs sm:text-sm">
               <SelectItem
                 value="en"
-                className="hover:bg-gray-700/50 text-gray-200 focus:bg-gray-700/50 cursor-pointer min-h-[32px] sm:min-h-0">
+                className="hover:bg-gray-700/50 text-[#ae997a] focus:bg-[#ae997a]/50 cursor-pointer min-h-[32px] sm:min-h-0 focus:ring-0 focus:outline-none">
                 English
               </SelectItem>
               <SelectItem
                 value="gr"
-                className="hover:bg-gray-700/50 text-gray-200 focus:bg-gray-700/50 cursor-pointer min-h-[32px] sm:min-h-0">
+                className="hover:bg-gray-700/50 text-[#ae997a] focus:bg-[#ae997a]/50 cursor-pointer min-h-[32px] sm:min-h-0 focus:ring-0 focus:outline-none">
                 Ελληνικά
               </SelectItem>
             </SelectContent>
