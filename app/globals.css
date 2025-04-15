@@ -10,3 +10,21 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+@layer base {
+  body {
+    /* Use the CSS variable defined by next/font as the primary font */
+    /* Added 'serif' as a generic fallback for slab serifs */
+    font-family: var(--font-roboto-slab), serif;
+
+    /* Apply other base body styles if needed */
+    /* Example: @apply bg-background text-foreground antialiased; */
+    /* Ensure antialiased is applied here or in layout body className */
+    @apply antialiased;
+  }
+
+  /* Optional: Ensure form elements inherit the font */
+  /* button, input, textarea, select {
+    font-family: inherit;
+  } */
+}
