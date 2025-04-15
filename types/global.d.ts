@@ -21,7 +21,6 @@ export interface MenuItem {
   name: { en: string; gr: string }; // Name in English and Greek
   description: { en: string; gr: string }; // Description/Ingredients in English and Greek
   price: PriceInfo; // Use the structured PriceInfo object
-  image: string; // Image URL for the item (optional, could be used in modal)
 }
 
 /**

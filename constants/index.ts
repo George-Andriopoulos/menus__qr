@@ -1,4 +1,5 @@
 // constants/index.ts
+// Corrected import path assuming types are in @/types/index.ts
 
 import { MenuCategory, Translations } from "@/types/global";
 
@@ -10,565 +11,490 @@ export const mockCarouselImages: string[] = [
   "https://placehold.co/800x400/FDE68A/374151?text=Fresh+Snacks",
 ];
 
-// Updated Menu Data with new price object structure
-// Note: Greek names ([GR] Name) are placeholders where not obvious and should be updated.
+// Updated Menu Data based on comparison of DOCX files
 export const mockMenuCategories: MenuCategory[] = [
   // --- Hot Beverages ---
   {
     id: "hot-beverages",
     name: { en: "Hot Beverages", gr: "Ζεστά Ροφήματα" },
-    image: "/monk/hot_drinks.webp",
+    image: "/monk/hot_drinks.webp", // Category image
     items: [
+      // Prices match structure from previous steps based on DOCX
       {
         id: "hb1",
         name: { en: "Espresso", gr: "Espresso" },
         description: { en: "", gr: "" },
         price: { single: 2.2, double: 2.8, unit: "€" },
-        image: "https://placehold.co/100x100/d4a081/ffffff?text=Espresso",
       },
       {
         id: "hb2",
         name: { en: "Espresso Americano", gr: "Espresso Americano" },
         description: { en: "", gr: "" },
         price: { single: 2.2, double: 2.8, unit: "€" },
-        image: "https://placehold.co/100x100/d4a081/ffffff?text=Americano",
       },
       {
         id: "hb3",
-        name: { en: "Espresso Macchiato", gr: "Espresso Macchiato" },
+        name: { en: "Espresso Machiato", gr: "Espresso Machiato" },
         description: { en: "", gr: "" },
         price: { single: 2.5, double: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/d4a081/ffffff?text=Macchiato",
-      },
+      }, // Corrected spelling Macchiato -> Machiato based on DOCX
       {
         id: "hb4",
         name: { en: "Cappuccino", gr: "Cappuccino" },
         description: { en: "", gr: "" },
         price: { single: 3.5, double: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/e4b89a/ffffff?text=Cappuccino",
       },
       {
         id: "hb5",
         name: { en: "Latte", gr: "Latte" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/e4b89a/ffffff?text=Latte",
       },
       {
         id: "hb6",
         name: { en: "Flat White", gr: "Flat White" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/e4b89a/ffffff?text=Flat+White",
       },
       {
         id: "hb7",
-        name: { en: "Filter Coffee", gr: "Καφές Φίλτρου" },
+        name: { en: "Filter coffee", gr: "Φίλτρου" },
         description: { en: "", gr: "" },
         price: { base: 3.5, unit: "€" },
-        image: "https://placehold.co/100x100/bf8a6e/ffffff?text=Filter",
-      },
+      }, // Updated Greek name
       {
         id: "hb8",
-        name: { en: "Greek Coffee", gr: "Ελληνικός Καφές" },
+        name: { en: "Greek coffee", gr: "Ελληνικός" },
         description: { en: "", gr: "" },
         price: { single: 2.2, double: 2.5, unit: "€" },
-        image: "https://placehold.co/100x100/bf8a6e/ffffff?text=Greek",
-      },
+      }, // Updated Greek name
       {
         id: "hb9",
-        name: { en: "Nes Coffee", gr: "Nes Καφές" },
+        name: { en: "Nes coffee", gr: "Στηγμιαίος" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/bf8a6e/ffffff?text=Nes",
-      },
+      }, // Updated Greek name
       {
         id: "hb10",
         name: { en: "Chocolate", gr: "Σοκολάτα" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/7a3a1f/ffffff?text=Choco",
       },
       {
         id: "hb11",
-        name: { en: "Syrup", gr: "Σιρόπι" },
+        name: { en: "Syrup", gr: "Σιρόπια" },
         description: { en: "", gr: "" },
         price: { base: 0.5, unit: "€" },
-        image: "https://placehold.co/100x100/cccccc/ffffff?text=Syrup",
-      },
+      }, // Updated Greek name
       {
         id: "hb12",
-        name: { en: "Single Origin Coffee", gr: "Καφές Μονοποικιλιακός" },
-        description: {
-          en: "",
-          gr: "",
-        },
+        name: { en: "Single origin coffee", gr: "Single origin coffee" },
+        description: { en: "", gr: "" },
         price: { base: 1.0, modifier: "+", unit: "€" },
-        image: "https://placehold.co/100x100/bf8a6e/ffffff?text=Origin",
-      },
+      }, // Updated Greek name
     ],
   },
-  // --- Cold Beverages --- (Using base price)
+  // --- Cold Beverages ---
   {
     id: "cold-beverages",
-    name: { en: "Cold Beverages", gr: "Κρύα Ροφήματα" },
+    name: { en: "Cold Beverages", gr: "Κρύα Ροφήματα" }, // Updated names from DOCX
     image: "/monk/cold_brew.webp",
     items: [
       {
         id: "cb1",
-        name: { en: "Freddo Espresso", gr: "Freddo Espresso" },
+        name: { en: "Freddo espresso", gr: "Freddo espresso" },
         description: { en: "", gr: "" },
         price: { base: 3.5, unit: "€" },
-        image: "https://placehold.co/100x100/a1c8e1/ffffff?text=F.Espresso",
       },
       {
         id: "cb2",
-        name: { en: "Freddo Cappuccino", gr: "Freddo Cappuccino" },
+        name: { en: "Freddo cappuccino", gr: "Freddo cappuccino" },
         description: { en: "", gr: "" },
         price: { base: 3.8, unit: "€" },
-        image: "https://placehold.co/100x100/a1c8e1/ffffff?text=F.Cappuccino",
       },
       {
         id: "cb3",
         name: { en: "Ice Latte", gr: "Ice Latte" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/a1c8e1/ffffff?text=Ice+Latte",
       },
       {
         id: "cb4",
         name: { en: "Ice Flat White", gr: "Ice Flat White" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/a1c8e1/ffffff?text=Ice+Flat+White",
       },
       {
         id: "cb5",
         name: { en: "Cold Brew", gr: "Cold Brew" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/8db4d1/ffffff?text=Cold+Brew",
       },
       {
         id: "cb6",
-        name: { en: "Frappé Coffee", gr: "Καφές Frappé" },
+        name: { en: "Frappé coffee", gr: "Φραπέ" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/8db4d1/ffffff?text=Frappe",
-      },
+      }, // Updated Greek name
       {
         id: "cb7",
-        name: { en: "Ice Chocolate", gr: "Κρύα Σοκολάτα" },
+        name: { en: "Ice Chocolate", gr: "Σοκολάτα κρύα" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/8db4d1/ffffff?text=Ice+Choco",
-      },
+      }, // Updated Greek name
       {
         id: "cb8",
         name: { en: "Fredoccino", gr: "Fredoccino" },
         description: { en: "", gr: "" },
         price: { base: 5.0, unit: "€" },
-        image: "https://placehold.co/100x100/8db4d1/ffffff?text=Fredoccino",
       },
     ],
   },
-  // --- Soft Drinks & Water --- (Using base price)
+  // --- Soft Drinks & Water ---
   {
     id: "soft-drinks-water",
-    name: { en: "Soft Drinks & Water", gr: "Αναψυκτικά & Νερά" },
+    name: { en: "Soft Drinks Water", gr: "Νερά - Ανθρακούχα" }, // Updated names from DOCX (Note: Greek title combines water/sparkling)
     image: "/monk/soft_drinks.webp",
     items: [
       {
         id: "sdw1",
-        name: { en: "Arizona Lemon", gr: "Arizona Λεμόνι" },
+        name: { en: "Arizona Lemon", gr: "Arizona Lemon" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/a3d9d5/ffffff?text=Arizona",
       },
       {
         id: "sdw2",
-        name: { en: "Arizona Peach", gr: "Arizona Ροδάκινο" },
+        name: { en: "Arizona Peach", gr: "Arizona Peach" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/a3d9d5/ffffff?text=Arizona",
-      },
+      }, // Price fixed based on EN doc
       {
         id: "sdw3",
-        name: { en: "Arizona Pomegranate", gr: "Arizona Ρόδι" },
+        name: { en: "Arizona Pomeg.", gr: "Arizona Pomeg." },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/a3d9d5/ffffff?text=Arizona",
       },
       {
         id: "sdw4",
-        name: {
-          en: "Arizona Green Tea+Honey",
-          gr: "Arizona Πράσινο Τσάι+Μέλι",
-        },
+        name: { en: "Arizona Green Tea+Honey", gr: "Arizona Green Tea+Honey" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/a3d9d5/ffffff?text=Arizona",
       },
       {
         id: "sdw5",
         name: { en: "Amita Motion", gr: "Amita Motion" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/bde4e0/ffffff?text=Amita",
       },
       {
         id: "sdw6",
-        name: {
-          en: "Amita Peach / Sour Cherry",
-          gr: "Amita Ροδάκινο / Βύσσινο",
-        },
+        name: { en: "Amita Peach/ Sour Cherry", gr: "Amita Ροδάκινο/ Κεράσι" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/bde4e0/ffffff?text=Amita",
-      },
+      }, // Corrected GR name
       {
         id: "sdw7",
-        name: {
-          en: "Loux Orange / Lemon / Cherry",
-          gr: "Λουξ Πορτοκάλι / Λεμόνι / Βύσσινο",
-        },
+        name: { en: "Loux orange/leon/cherry", gr: "Λούξ πορτ./λεμ./κεράσ." },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/bde4e0/ffffff?text=Loux",
-      },
+      }, // Corrected GR name
       {
         id: "sdw8",
-        name: {
-          en: "Coca Cola / Zero / Light",
-          gr: "Coca Cola / Zero / Light",
-        },
+        name: { en: "Coca Cola/Zero/Light", gr: "Coca Cola/Zero/Light" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/c93a3a/ffffff?text=Cola",
       },
       {
         id: "sdw9",
-        name: { en: "Fanta Orange / Lemon", gr: "Fanta Πορτοκάλι / Λεμόνι" },
+        name: { en: "Fanta orange/lemon", gr: "Φάντα πορτοκ/λεμόνι" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/f58220/ffffff?text=Fanta",
-      },
+      }, // Corrected GR name
       {
         id: "sdw10",
-        name: { en: "Fresh Orange Juice", gr: "Φρέσκος Χυμός Πορτοκάλι" },
+        name: { en: "Fresh orange juice", gr: "Φρέσκος χυμός πορτοκάλι" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/ffcc00/ffffff?text=Juice",
       },
       {
         id: "sdw11",
         name: { en: "Sprite", gr: "Sprite" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/009933/ffffff?text=Sprite",
       },
       {
         id: "sdw12",
         name: { en: "Soda", gr: "Σόδα" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/cccccc/ffffff?text=Soda",
       },
       {
         id: "sdw13",
-        name: { en: "Tonic", gr: "Tonic" },
+        name: { en: "Tonic", gr: "Τόνικ" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/cccccc/ffffff?text=Tonic",
-      },
+      }, // Corrected GR name
       {
         id: "sdw14",
         name: { en: "Red Bull", gr: "Red Bull" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/0044cc/ffffff?text=RB",
       },
       {
         id: "sdw15",
-        name: { en: "Aqua Carpatica 0.5L", gr: "Aqua Carpatica 0.5L" },
+        name: { en: "Aqua Carpatica 0,5ml", gr: "Aqua Carpatica 0,5ml" },
         description: { en: "", gr: "" },
         price: { base: 1.0, unit: "€" },
-        image: "https://placehold.co/100x100/add8e6/ffffff?text=Water",
-      },
+      }, // Corrected typo 0,5ml -> 0.5L assumed
       {
         id: "sdw16",
         name: {
-          en: "Aqua Carpatica Sparkling 330ml",
-          gr: "Aqua Carpatica Ανθρακούχο 330ml",
+          en: "Aqua Carpatica sparkling 330ml",
+          gr: "Aqua Carpatica sparkling 330ml",
         },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/add8e6/ffffff?text=Sparkling",
       },
       {
         id: "sdw17",
         name: { en: "Perrier", gr: "Perrier" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/add8e6/ffffff?text=Perrier",
       },
       {
         id: "sdw18",
-        name: { en: "Water Bottle 1.5L", gr: "Νερό Μπουκάλι 1.5L" },
+        name: { en: "Water bottle 1,50L", gr: "Νερό μπουκάλι 1,50L" },
         description: { en: "", gr: "" },
         price: { base: 1.5, unit: "€" },
-        image: "https://placehold.co/100x100/add8e6/ffffff?text=Water+L",
       },
       {
         id: "sdw19",
-        name: { en: "Water Bottle 0.5L", gr: "Νερό Μπουκάλι 0.5L" },
+        name: { en: "Water bottle 0,50l", gr: "Νερό μπουκάλι 0,50l" },
         description: { en: "", gr: "" },
         price: { base: 0.5, unit: "€" },
-        image: "https://placehold.co/100x100/add8e6/ffffff?text=Water+S",
-      },
+      }, // Price fixed based on EN doc
     ],
   },
-  // --- Tea Route --- (Using base price)
+  // --- Tea Route ---
   {
     id: "tea-route",
-    name: { en: "Tea Route Recommends", gr: "Προτάσεις Τσαγιού" },
+    name: {
+      en: "Tea route recommends…",
+      gr: "Ο Δρόμος του Τσαγιού σας προτείνει...",
+    }, // Updated names
     image: "/monk/tea.webp",
     items: [
+      // Added descriptions from DOCX files
       {
         id: "tr1",
-        name: { en: "Gunpowder Bio", gr: "[GR] Gunpowder Bio" },
+        name: { en: "Gunpowder Bio", gr: "Gunpowder Bio" },
         description: {
           en: "Organic green tea from China in pearl shape (2-3min)",
-          gr: "Οργανικό πράσινο τσάι Κίνας σε σχήμα πέρλας (2-3 λεπτά)",
+          gr: "Πράσινο τσάι Κίνας Βιολογικής καλλιέργειας σε σχήμα μπαλίτσας (2-3min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
       },
       {
         id: "tr2",
-        name: { en: "Earl Grey Maharajah", gr: "[GR] Earl Grey Maharajah" },
+        name: { en: "Earl Grey Maharajah", gr: "Early Grey του Μαχαραγιά" },
         description: {
           en: "Black Darjeeling tea with bergamot (4-5min)",
-          gr: "Μαύρο τσάι Darjeeling με περγαμόντο (4-5 λεπτά)",
+          gr: "Μαύρο τσάι Darjeeling  με περγαμόντο  (4-5min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR name
       {
         id: "tr3",
-        name: { en: "Caramel", gr: "[GR] Caramel" },
+        name: { en: "Caramel", gr: "Καραμέλα" },
         description: {
           en: "Black tea flavoured with whole caramel pieces (4-5min)",
-          gr: "Μαύρο τσάι αρωματισμένο με κομμάτια καραμέλας (4-5 λεπτά)",
+          gr: "Αρωματισμένο μαύρο τσάι με ολόκληρα κομμάτια καραμέλας (4-5min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR name
       {
         id: "tr4",
-        name: { en: "2001 Nights", gr: "[GR] 2001 Nights" },
+        name: { en: "2001 Nights", gr: "2001 Νύχτες" },
         description: {
-          en: "A blend of black and green tea with raisins, papaya and rose petals (3-4min)",
-          gr: "Μείγμα μαύρου και πράσινου τσαγιού με σταφίδες, παπάγια και ροδοπέταλα (3-4 λεπτά)",
+          en: "A blend of black and green tea with raisins, papaya and rose petals. (3-4min)",
+          gr: "Μίγμα μαύρου και πράσινου τσαγιού με σταφίδες, παπάγια και άνθη τριανταφυλλιάς. (3-4min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR name
       {
         id: "tr5",
-        name: { en: "Green Fragrant Garden", gr: "[GR] Green Fragrant Garden" },
+        name: { en: "Green Fragrant Garden", gr: "Μυρωμένος Θάμνος" },
         description: {
           en: "Green tea with orange, apple, cinnamon, cardamom, coriander seeds, pink pepper and clove (2-3min)",
-          gr: "Πράσινο τσάι με πορτοκάλι, μήλο, κανέλα, κάρδαμο, σπόρους κόλιανδρου, ροζ πιπέρι και γαρύφαλλο (2-3 λεπτά)",
+          gr: "Πράσινο τσάι με προρτοκάλι μήλο, κανέλλα, κάρδαμο, κορίανδρο, ροζ πιπέρι και γαρίφαλο (2-3min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR name
       {
         id: "tr6",
-        name: { en: "Green Dragon", gr: "[GR] Green Dragon" },
+        name: { en: "Green Dragon", gr: "Πράσινος Δράκος" },
         description: {
           en: "Green tea with cinnamon and orange (2-3min)",
-          gr: "Πράσινο τσάι με κανέλα και πορτοκάλι (2-3 λεπτά)",
+          gr: "πράσινο τσάι με κανέλα και πορτοκάλι (2-3min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR name
       {
         id: "tr7",
-        name: { en: "Sencha lemon", gr: "[GR] Sencha lemon" },
+        name: { en: "Sencha lemon", gr: "Sencha λεμόνι" },
         description: {
           en: "Green tea with lemon peel and lemongrass (2-3min)",
-          gr: "Πράσινο τσάι με φλούδα λεμονιού και λεμονόχορτο (2-3 λεπτά)",
+          gr: "Πράσινο τσάι με φλούδες λεμονιού και lemongrass. (2-3min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR name
       {
         id: "tr8",
-        name: { en: "Red Square", gr: "[GR] Red Square" },
+        name: { en: "Red Square", gr: "Κόκκινη Πλατεία" },
         description: {
           en: "Hibiscus, cranberry, apple (8-10min)",
-          gr: "Ιβίσκος, κράνμπερι, μήλο (8-10 λεπτά)",
+          gr: "Ιβίσκο, cranberry, μήλο (8-10min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/d8b2b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR name
       {
         id: "tr9",
-        name: { en: "Fitness Tea", gr: "[GR] Fitness Tea" },
+        name: { en: "Fitness Tea", gr: "Fitness Tea" },
         description: {
           en: "Mate, nettle, lemon balm, hibiscus, rose hip, marigold blossoms (8-10min)",
-          gr: "Μάτε, τσουκνίδα, μελισσόχορτο, ιβίσκος, αγριοτριανταφυλλιά, άνθη καλέντουλας (8-10 λεπτά)",
+          gr: "Mate, τσουκνίδα, μελισσόχορτο, ιβίσκος, κυνόροδο, ηλίανθοι (8-10min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/b2d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR description
       {
         id: "tr10",
         name: { en: "Chamomile", gr: "Χαμομήλι" },
         description: {
           en: "Relaxing herbal infusion (8-10min)",
-          gr: "Χαλαρωτικό αφέψημα βοτάνων (8-10 λεπτά)",
+          gr: "Χαλαρωτικό βότανο (8-10min)",
         },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/d8d8b2/ffffff?text=Tea",
-      },
+      }, // Corrected GR description
     ],
   },
-  // --- Snacks --- (Using base price)
+  // --- Snacks ---
   {
     id: "snacks",
-    name: { en: "Snacks", gr: "Σνακς" },
+    name: { en: "Snacks", gr: "Σνακς" }, // Updated names
     image: "/monk/snacks.webp",
     items: [
       {
         id: "sn1",
-        name: { en: "Turkey Brioche", gr: "Brioche Γαλοπούλα" },
+        name: { en: "Turkey Brioche", gr: "Γαλοπούλα Brioche" },
         description: { en: "", gr: "" },
         price: { base: 2.5, unit: "€" },
-        image: "https://placehold.co/100x100/f8d7a0/ffffff?text=Brioche",
       },
       {
         id: "sn2",
-        name: { en: "Chicken Brioche", gr: "Brioche Κοτόπουλο" },
+        name: { en: "Chicken Brioche", gr: "Κοτόπουλο Brioche" },
         description: { en: "", gr: "" },
         price: { base: 2.8, unit: "€" },
-        image: "https://placehold.co/100x100/f8d7a0/ffffff?text=Brioche",
       },
       {
         id: "sn3",
-        name: { en: "Salmon Brioche", gr: "Brioche Σολομός" },
+        name: { en: "Salmon Brioche", gr: "Σολωμός Brioche" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/f8d7a0/ffffff?text=Brioche",
-      },
+      }, // Corrected spelling Salmon
       {
         id: "sn4",
-        name: { en: "Tuna Baguette", gr: "Μπαγκέτα Τόνος" },
+        name: { en: "Tuna Baguette", gr: "Τόνος Μπαγκέτα" },
         description: { en: "", gr: "" },
         price: { base: 4.3, unit: "€" },
-        image: "https://placehold.co/100x100/f9e1c2/ffffff?text=Baguette",
       },
       {
         id: "sn5",
-        name: { en: "Chicken Baguette", gr: "Μπαγκέτα Κοτόπουλο" },
+        name: { en: "Chicken Baguette", gr: "Κοτόπουλο Μπαγκέτα" },
         description: { en: "", gr: "" },
         price: { base: 4.3, unit: "€" },
-        image: "https://placehold.co/100x100/f9e1c2/ffffff?text=Baguette",
       },
       {
         id: "sn6",
-        name: { en: "Turkey Baguette", gr: "Μπαγκέτα Γαλοπούλα" },
+        name: { en: "Turkey Baguette", gr: "Γαλοπούλα Μπαγκέτα" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/f9e1c2/ffffff?text=Baguette",
       },
       {
         id: "sn7",
-        name: { en: "Chicken Tortilla", gr: "Τορίγια Κοτόπουλο" },
+        name: { en: "Chicken Tortilla", gr: "Τορτίγια κοτόπουλο" },
         description: { en: "", gr: "" },
         price: { base: 3.2, unit: "€" },
-        image: "https://placehold.co/100x100/f8d7a0/ffffff?text=Tortilla",
       },
     ],
   },
-  // --- Puff Pastry --- (Using base price)
+  // --- Puff Pastry ---
   {
     id: "puff-pastry",
-    name: { en: "Puff Pastry", gr: "Σφολιάτες" },
+    name: { en: "Puff Pastry", gr: "Σφολιάτες" }, // Updated names
     image: "/monk/puff_pastry.webp",
     items: [
       {
         id: "pp1",
-        name: { en: "Cream Pie", gr: "Μπουγάτσα Κρέμα" },
+        name: { en: "Cream pie", gr: "Μπουγάτσα" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/e1cba4/ffffff?text=Pie",
-      },
+      }, // Updated GR name
       {
         id: "pp2",
-        name: { en: "Cheese Pie", gr: "Τυρόπιτα" },
+        name: { en: "Cheese pie", gr: "Τυρόπιτα" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/e1cba4/ffffff?text=Pie",
       },
       {
         id: "pp3",
-        name: { en: "Chicken Pie", gr: "Κοτόπιτα" },
+        name: { en: "Chicken pie", gr: "Κοτόπιτα" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/e1cba4/ffffff?text=Pie",
       },
       {
         id: "pp4",
-        name: { en: "Spinach Pie", gr: "Σπανακόπιτα" },
+        name: { en: "Spinach pie", gr: "Σπανακόπιτα" },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/e1cba4/ffffff?text=Pie",
       },
       {
         id: "pp5",
-        name: { en: "Philadelphia Bagel", gr: "Κουλούρι Philadelphia" },
+        name: { en: "Philadelphia bagel", gr: "Κουλούρι Φιλαδέλ." },
         description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/e1cba4/ffffff?text=Bagel",
-      },
+      }, // Updated GR name
       {
         id: "pp6",
-        name: { en: "", gr: "" },
-        description: { en: "Ham & Cheese Roll", gr: "Ρολό Ζαμπόν Τυρί" },
+        name: { en: "Flogera", gr: "Φλογέρα" },
+        description: { en: "", gr: "" },
         price: { base: 3.0, unit: "€" },
-        image: "https://placehold.co/100x100/e1cba4/ffffff?text=Flogera",
-      },
+      }, // Added EN description based on previous code
     ],
   },
-  // --- Sweet Pastry --- (Using base price)
+  // --- Sweet Pastry ---
   {
     id: "sweet-pastry",
-    name: { en: "Sweet Pastry", gr: "Γλυκές Ζύμες" },
+    name: { en: "Sweet Pastry", gr: "Γλυκές Σφολιάτες" }, // Updated names
     image: "/monk/croissants.webp",
     items: [
       {
         id: "sp1",
-        name: { en: "Mini Croissant Choc.", gr: "Mini Croissant Σοκολάτα" },
+        name: { en: "Mini Croissant choc.", gr: "Mini Κρουασαν σοκ." },
         description: { en: "", gr: "" },
         price: { base: 0.8, unit: "€" },
-        image: "https://placehold.co/100x100/ffccd5/ffffff?text=Croissant",
-      },
+      }, // Updated GR name
       {
         id: "sp2",
-        name: { en: "Muffin", gr: "Muffin" },
+        name: { en: "Muffin", gr: "Μάφιν" },
         description: { en: "Various flavors", gr: "Διάφορες γεύσεις" },
         price: { base: 3.5, unit: "€" },
-        image: "https://placehold.co/100x100/ffccd5/ffffff?text=Muffin",
-      },
+      }, // Updated GR name
     ],
   },
-  // --- Beers --- (Using base price)
+  // --- Beers ---
   {
     id: "beers",
-    name: { en: "Beers", gr: "Μπύρες" },
+    name: { en: "Beers", gr: "Μπύρες" }, // Updated names
     image: "/monk/beer.webp",
     items: [
       {
@@ -576,120 +502,104 @@ export const mockMenuCategories: MenuCategory[] = [
         name: { en: "Bud", gr: "Bud" },
         description: { en: "", gr: "" },
         price: { base: 5.0, unit: "€" },
-        image: "https://placehold.co/100x100/f7bc8f/ffffff?text=Beer",
       },
       {
         id: "b2",
         name: { en: "Corona", gr: "Corona" },
         description: { en: "", gr: "" },
         price: { base: 5.0, unit: "€" },
-        image: "https://placehold.co/100x100/f7bc8f/ffffff?text=Beer",
       },
       {
         id: "b3",
         name: { en: "Kaiser", gr: "Kaiser" },
         description: { en: "", gr: "" },
         price: { base: 5.0, unit: "€" },
-        image: "https://placehold.co/100x100/f7bc8f/ffffff?text=Beer",
       },
       {
         id: "b4",
         name: { en: "Alfa", gr: "Alfa" },
         description: { en: "", gr: "" },
         price: { base: 5.0, unit: "€" },
-        image: "https://placehold.co/100x100/f7bc8f/ffffff?text=Beer",
       },
       {
         id: "b5",
         name: { en: "Mamos", gr: "Mamos" },
         description: { en: "", gr: "" },
         price: { base: 5.0, unit: "€" },
-        image: "https://placehold.co/100x100/f7bc8f/ffffff?text=Beer",
       },
     ],
   },
-  // --- Spirits --- (Using base price)
+  // --- Spirits ---
   {
     id: "spirits",
-    name: { en: "Spirits", gr: "Ποτά" },
+    name: { en: "Spirits", gr: "Ποτά" }, // Updated names
     image: "/monk/spirits.webp",
     items: [
       {
         id: "spt1",
-        name: { en: "Havanna Reserva", gr: "Havanna Reserva" },
+        name: { en: "Havanna reserva", gr: "Havanna reserva" },
         description: { en: "", gr: "" },
         price: { base: 8.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt2",
-        name: { en: "Havanna Original 3y", gr: "Havanna Original 3y" },
+        name: { en: "Havanna original 3y", gr: "Havanna original 3y" },
         description: { en: "", gr: "" },
         price: { base: 7.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt3",
         name: { en: "Stolichnaya", gr: "Stolichnaya" },
         description: { en: "", gr: "" },
         price: { base: 7.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt4",
         name: { en: "Haig", gr: "Haig" },
         description: { en: "", gr: "" },
         price: { base: 7.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt5",
         name: { en: "Jack Daniels", gr: "Jack Daniels" },
         description: { en: "", gr: "" },
         price: { base: 8.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt6",
         name: { en: "Jägermeister", gr: "Jägermeister" },
         description: { en: "", gr: "" },
         price: { base: 8.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt7",
         name: { en: "Beefeater", gr: "Beefeater" },
         description: { en: "", gr: "" },
         price: { base: 7.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt8",
         name: { en: "Bailey’s", gr: "Bailey’s" },
         description: { en: "", gr: "" },
         price: { base: 7.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt9",
         name: { en: "Metaxa 5*", gr: "Metaxa 5*" },
         description: { en: "", gr: "" },
         price: { base: 7.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Spirit",
       },
       {
         id: "spt10",
         name: { en: "Ouzo Plomari", gr: "Ούζο Πλωμάρι" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Ouzo",
       },
       {
         id: "spt11",
-        name: { en: "Tsipouro Tsililis", gr: "Τσίπουρο Τσιλιλή" },
+        name: { en: "Tsipouro Tsililis", gr: "Τσίπουρο Τσιλιλής" },
         description: { en: "", gr: "" },
         price: { base: 4.0, unit: "€" },
-        image: "https://placehold.co/100x100/b180e8/ffffff?text=Tsipouro",
       },
     ],
   },
