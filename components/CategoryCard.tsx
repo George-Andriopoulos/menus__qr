@@ -27,7 +27,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   return (
     <Card
       // Added focus:outline-none to remove focus outline, and cursor-pointer
-      className="overflow-hidden text-[#fffdfe] transition-all duration-300 hover:shadow-xl hover:scale-[1.03] cursor-pointer group bg-gray-800 border-gray-700 active:scale-[0.98] relative h-48 focus:outline-none focus:ring-0"
+      className="overflow-hidden text-[#fffdfe] transition-all lg:mt-10 lg:w-[270px]  duration-300 hover:shadow-xl hover:scale-[1.03] cursor-pointer group bg-gray-800 border-gray-700 active:scale-[0.98] relative h-48 focus:outline-none focus:ring-0"
       onClick={() => onSelect(category)}
       role="button"
       tabIndex={0}
