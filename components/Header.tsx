@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
       {title && (
         <Image
           src="/monk/logo.webp"
-          alt="Logo"
+          alt="Logo Monk"
           width={250}
           height={250}
           quality={100}

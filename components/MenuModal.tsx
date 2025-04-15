@@ -143,7 +143,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
               ) : (
                 // Flex Item 2: Fixed Price (when not using columns)
                 // User's price styling
-                <p className="text-[#4B3621] font-bold text-base  flex-shrink-0">
+                <p className="text-[#4B3621] font-medium text-base  flex-shrink-0">
                   {formatPrice(
                     item.price.base,
                     item.price.unit,
