@@ -16,6 +16,16 @@ const roboto_slab = Roboto_Slab({
 export const metadata: Metadata = {
   title: "Monk",
   description: "Coffee that's always the way you like",
+  icons: {
+    icon: "/monk/logo_menu.webp", // Path to your icon in the public folder
+    shortcut: "/monk/logo_menu.webp", // For older browsers
+    apple: "/monk/logo_menu.webp", // For Apple touch icons
+    // You can specify different sizes or types if needed:
+    // icon: [
+    //   { url: '/icon.png', type: 'image/png' },
+    //   { url: '/icon.svg', type: 'image/svg+xml' },
+    // ],
+  },
 };
 
 /**

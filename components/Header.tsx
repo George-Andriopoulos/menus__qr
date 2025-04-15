@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
   }
 
   return (
-    <header className="text-center  pt-16 pb-8 mb-6 md:pt-8 ">
+    <header className="text-center   pt-16 pb-8 mb-6 md:pt-8 ">
       {/* Render title only if it exists */}
       {title && (
         <Image
@@ -29,12 +29,12 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
           width={250}
           height={250}
           quality={100}
-          className="mx-auto "
+          className="mx-auto mt-10 "
         />
       )}
       {/* Render subtitle only if it exists */}
       {subtitle && (
-        <h3 className="text-lg sm:text-xl text-[#fffdfe] mt-2 px-2">
+        <h3 className="text-lg sm:text-xl text-[#fffdfe] mt-4 px-2">
           {subtitle}
         </h3>
       )}
