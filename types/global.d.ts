@@ -1,50 +1,61 @@
 // types/index.ts
 
 /**
+ * Represents the structured price information for a menu item.
+ * Allows for single price, double price, or a base price.
+ * Includes optional unit and modifier (like '+').
+ */
+export interface PriceInfo {
+  single?: number; // Price for single serving (optional)
+  double?: number; // Price for double serving (optional)
+  base?: number; // Base price for items with one price (optional)
+  unit: string; // Currency unit (e.g., '€', '$')
+  modifier?: string; // Optional modifier (e.g., '+')
+}
+
+/**
  * Represents a single item on the menu.
- * Prices are now optional specific fields.
  */
 export interface MenuItem {
   id: string;
-  name: { en: string; gr: string };
-  description: { en: string; gr: string };
-  priceSingle?: string; // Optional: Price for single size/version
-  priceDouble?: string; // Optional: Price for double size/version
-  priceFixed?: string; // Optional: Price for items with only one price
-  image: string;
+  name: { en: string; gr: string }; // Name in English and Greek
+  description: { en: string; gr: string }; // Description/Ingredients in English and Greek
+  price: PriceInfo; // Use the structured PriceInfo object
+  image: string; // Image URL for the item (optional, could be used in modal)
 }
 
 /**
- * Represents a category in the menu.
+ * Represents a category in the menu (e.g., Hot Beverages, Snacks).
  */
 export interface MenuCategory {
   id: string;
-  name: { en: string; gr: string };
-  image: string;
-  items: MenuItem[];
+  name: { en: string; gr: string }; // Category name in English and Greek
+  image: string; // Representative image URL for the category card
+  items: MenuItem[]; // Array of menu items belonging to this category
 }
 
 /**
- * Defines the structure for translation strings.
+ * Defines the structure for translation strings used in the UI.
  */
 export interface TranslationSet {
   headerTitle: string;
   headerSubtitle: string;
   menuCategories: string;
   language: string;
-  ingredients: string;
-  price: string; // General price label (might be less used now)
+  ingredients: string; // Label for description field in modal
+  price: string; // General price label
   close: string;
   orderNow: string;
   viewMenu: string;
-  // Added keys for modal table headers
-  beverages: string;
-  single: string;
-  double: string;
+  // Keys for modal table headers
+  beverages: string; // Label for item name column header
+  single: string; // Label for SINGLE price column header
+  double: string; // Label for DOUBLE price column header
 }
 
 /**
- * Defines the structure for the main translations object.
+ * Defines the structure for the main translations object,
+ * mapping language codes ('en', 'gr') to their respective TranslationSet.
  */
 export interface Translations {
   en: TranslationSet;
