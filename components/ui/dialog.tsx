@@ -75,8 +75,6 @@ function DialogContent({
 }: React.ComponentProps<typeof DialogPrimitive.Content>) {
   return (
     <DialogPortal>
-      {" "}
-      {/* Removed duplicate data-slot */}
       <DialogOverlay />
       <DialogPrimitive.Content
         data-slot="dialog-content"
@@ -87,7 +85,7 @@ function DialogContent({
         )}
         {...props}>
         {children}
-        {/* Close Button - Modified focus styles */}
+        {/* Close Button - Focus styles removed previously */}
         <DialogPrimitive.Close
           className={cn(
             // Base positioning and styling
@@ -95,7 +93,9 @@ function DialogContent({
             // Focus style override: remove ring and outline
             "focus:outline-none focus:ring-0 focus:ring-offset-0"
           )}>
-          <XIcon className="h-4 w-4" /> {/* Ensure icon size is set */}
+          {/* Apply text color directly to the icon */}
+          <XIcon className="h-4 w-4 text-[#ae997a]" />{" "}
+          {/* Added text color class */}
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>

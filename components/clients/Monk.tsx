@@ -70,7 +70,7 @@ const Monk = () => {
             <SelectTrigger
               className={cn(
                 "w-[110px] sm:w-[140px] h-9 sm:h-10",
-                "bg-[#fffdfe] backdrop-blur-sm border-[#ae997a] text-[#ae997a]",
+                "bg-[#fffdfe] backdrop-blur-sm border-[#ae997a] hover:text-[#ae997a]/80 text-[#ae997a]",
                 "rounded-md shadow-sm text-xs sm:text-sm",
                 "focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none"
               )}
@@ -88,7 +88,7 @@ const Monk = () => {
               </SelectItem>
               <SelectItem
                 value="gr"
-                className="hover:bg-gray-700/50 text-[#ae997a] focus:bg-[#ae997a]/50 cursor-pointer min-h-[32px] sm:min-h-0 focus:ring-0 focus:outline-none">
+                className="hover:bg-gray-700/50 text-[#ae997a]  focus:bg-[#ae997a]/50 cursor-pointer min-h-[32px] sm:min-h-0 focus:ring-0 focus:outline-none">
                 Ελληνικά
               </SelectItem>
             </SelectContent>

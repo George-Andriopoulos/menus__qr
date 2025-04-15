@@ -66,7 +66,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
         {/* Modal Header */}
         <DialogHeader className="border-b border-gray-700 p-4 flex-shrink-0">
           {/* User's specified styling for DialogTitle */}
-          <DialogTitle className="text-xl sm:text-2xl font-semibold text-[#ae997a] text-center ">
+          <DialogTitle className="text-xl sm:text-2xl font-semibold text-[#1F1F1F] text-center ">
             {category.name[lang] || category.name["en"]}
           </DialogTitle>
         </DialogHeader>
@@ -98,7 +98,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
               key={item.id}
               className={cn(
                 // User's item row styling
-                "p-3 hover:bg-gray-800/50 transition-colors duration-150 mx-1 rounded",
+                "p-3 hover:bg-[#ae997a]/90 transition-colors duration-150 mx-1 rounded",
                 // Apply grid only if needed, otherwise use flex
                 showSingleDoubleHeaders
                   ? "grid grid-cols-3 gap-x-3 sm:gap-x-4 items-center"
@@ -111,12 +111,12 @@ const MenuModal: React.FC<MenuModalProps> = ({
                   showSingleDoubleHeaders ? "col-span-1" : "flex-grow"
                 )}>
                 {/* User's item name styling */}
-                <h4 className="text-sm sm:text-base font-medium text-[#fffdfe]">
+                <h4 className="text-sm sm:text-base font-medium text-[#4B3621]">
                   {item.name[lang] || item.name["en"]}
                 </h4>
                 {/* User's item description styling (no label prefix) */}
                 {(item.description[lang] || item.description["en"]) && (
-                  <p className="text-xs text-gray-200 mt-0.5">
+                  <p className="text-xs text-[#4B3621] mt-0.5">
                     {item.description[lang] || item.description["en"]}
                   </p>
                 )}
@@ -127,7 +127,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
                 <>
                   {/* Column 2: Single Price / Base Price */}
                   {/* User's price styling */}
-                  <div className="col-span-1 text-right text-sm sm:text-base text-[#fffdfe] font-medium pr-1">
+                  <div className="col-span-1 text-right text-sm sm:text-base text-[#4B3621] font-medium pr-1">
                     {formatPrice(
                       item.price.single ?? item.price.base,
                       item.price.unit,
@@ -136,14 +136,14 @@ const MenuModal: React.FC<MenuModalProps> = ({
                   </div>
                   {/* Column 3: Double Price */}
                   {/* User's price styling */}
-                  <div className="col-span-1 text-right text-sm sm:text-base text-[#fffdfe] font-medium pr-1">
+                  <div className="col-span-1 text-right text-sm sm:text-base text-[#4B3621] font-medium pr-1">
                     {formatPrice(item.price.double, item.price.unit)}
                   </div>
                 </>
               ) : (
                 // Flex Item 2: Fixed Price (when not using columns)
                 // User's price styling
-                <p className="text-[#fffdfe] font-bold text-base sm:text-lg flex-shrink-0">
+                <p className="text-[#4B3621] font-bold text-base  flex-shrink-0">
                   {formatPrice(
                     item.price.base,
                     item.price.unit,
