@@ -22,7 +22,7 @@ import CategoryCard from "@/components/CategoryCard";
 import MenuModal from "@/components/MenuModal";
 
 // Import Constants and Types (Standardized Path)
-import { mockMenuCategories, translations } from "@/constants";
+import { mockMenuCategories, translations } from "@/constants/monk";
 import { MenuCategory, TranslationSet } from "@/types/global";
 // Standardize type import path assuming types are in @/types/index.ts
 
