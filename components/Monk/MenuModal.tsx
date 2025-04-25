@@ -100,7 +100,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
       <Dialog
         open={isOpen}
         onOpenChange={onClose}>
-        <DialogContent className="w-[90vw] max-w-2xl h-[80vh] p-0 bg-black flex flex-col rounded-lg overflow-hidden">
+        <DialogContent className="w-[90vw] max-w-2xl h-[80vh] p-0 bg-[#cfc3bc] flex flex-col rounded-lg overflow-hidden">
           <div
             className="relative w-full h-full overflow-hidden"
             onTouchStart={handleTouchStart}
