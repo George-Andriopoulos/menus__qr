@@ -1,4 +1,3 @@
-// components/MenuModal.tsx
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
@@ -95,12 +94,17 @@ const MenuModal: React.FC<MenuModalProps> = ({
 
   if (!isOpen || !category) return null;
 
+  // --- CASE 1: CATEGORY HAS IMAGES (Gallery Mode) ---
   if (category.images && category.images.length > 0) {
     return (
       <Dialog
         open={isOpen}
-        onOpenChange={onClose}>
+        onOpenChange={(open) => !open && onClose()}>
         <DialogContent className="w-[90vw] max-w-2xl h-[80vh] p-0 bg-[#cfc3bc] flex flex-col rounded-lg overflow-hidden">
+          <DialogHeader className="sr-only">
+            <DialogTitle>{category.name[lang] || category.name.en}</DialogTitle>
+          </DialogHeader>
+
           <div
             className="relative w-full h-full overflow-hidden"
             onTouchStart={handleTouchStart}
@@ -130,10 +134,11 @@ const MenuModal: React.FC<MenuModalProps> = ({
               ))}
             </div>
           </div>
+
           <DialogFooter className="p-3 sm:p-4">
             <Button
-              className="bg-[#ae997a] hover:bg-[#ae997a]/80 text-gray-900 w-full sm:w-auto"
               onClick={onClose}
+              className="bg-[#ae997a] hover:bg-[#ae997a]/80 text-gray-900 w-full sm:w-auto"
               size="lg">
               {t("close")}
             </Button>
@@ -143,6 +148,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
     );
   }
 
+  // --- CASE 2: NORMAL MENU MODAL ---
   const showSingleDoubleHeaders = category.items.some(
     (item) => item.price.single !== undefined || item.price.double !== undefined
   );
@@ -150,7 +156,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
   return (
     <Dialog
       open={isOpen}
-      onOpenChange={onClose}>
+      onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl bg-[url('/monk/monk_modal_bg.webp')] bg-cover bg-center bg-no-repeat border-gray-700 text-[#fffdfe] max-h-[85vh] sm:max-h-[80vh] flex flex-col rounded-lg p-0">
         <DialogHeader className="border-b border-gray-700 p-4 flex-shrink-0">
           <DialogTitle className="text-xl sm:text-2xl font-semibold text-[#1F1F1F] text-center">

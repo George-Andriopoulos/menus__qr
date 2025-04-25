@@ -606,7 +606,7 @@ export const mockMenuCategories: MenuCategory[] = [
   {
     id: "photo-gallery",
     name: { en: "Gallery", gr: "Γκαλερί" },
-    image: "/monk/gallery_cover.webp",
+    image: "/monk/gallery.webp",
     items: [], // No menu items
     images: [
       "/monk/gallery1.webp",
