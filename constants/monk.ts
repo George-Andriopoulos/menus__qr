@@ -603,6 +603,25 @@ export const mockMenuCategories: MenuCategory[] = [
       },
     ],
   },
+  {
+    id: "photo-gallery",
+    name: { en: "Gallery", gr: "Γκαλερί" },
+    image: "/monk/gallery_cover.webp",
+    items: [], // No menu items
+    images: [
+      "/monk/gallery1.webp",
+      "/monk/gallery2.webp",
+      "/monk/gallery3.webp",
+      "/monk/gallery4.webp",
+      "/monk/gallery5.webp",
+      "/monk/gallery6.webp",
+      "/monk/gallery7.webp",
+      "/monk/gallery8.webp",
+      "/monk/gallery9.webp",
+      "/monk/gallery10.webp",
+      "/monk/gallery11.webp",
+    ],
+  },
 ];
 
 // Updated Translations object with SINGLE/DOUBLE labels

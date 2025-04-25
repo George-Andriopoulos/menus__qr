@@ -31,6 +31,7 @@ export interface MenuCategory {
   name: { en: string; gr: string }; // Category name in English and Greek
   image: string; // Representative image URL for the category card
   items: MenuItem[]; // Array of menu items belonging to this category
+  images?: string[];
 }
 
 /**

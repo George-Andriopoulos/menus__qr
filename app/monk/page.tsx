@@ -1,4 +1,4 @@
-import Monk from "@/components/clients/Monk";
+import Monk from "@/components/Monk/Monk";
 import React from "react";
 
 const page = () => {

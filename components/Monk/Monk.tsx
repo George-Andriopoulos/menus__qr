@@ -17,9 +17,9 @@ import { cn } from "@/lib/utils";
 // Removed ChevronDown import as it's not explicitly used in SelectTrigger anymore
 
 // Import Custom Components
-import Header from "@/components/Header";
-import CategoryCard from "@/components/CategoryCard";
-import MenuModal from "@/components/MenuModal";
+import Header from "@/components/Monk/Header";
+import CategoryCard from "@/components/Monk/CategoryCard";
+import MenuModal from "@/components/Monk/MenuModal";
 
 // Import Constants and Types (Standardized Path)
 import { mockMenuCategories, translations } from "@/constants/monk";
