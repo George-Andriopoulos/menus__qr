@@ -1165,8 +1165,8 @@ export const translations: CasaPlayaTranslations = {
     beverages: "Beverages", // Keep or change as needed
     single: "SINGLE", // For items like Espresso, Coffee sizes, Water sizes
     double: "DOUBLE", // For items like Espresso, Coffee sizes, Water sizes, Premium Cuts for 2
-    forOnePerson: "For 1 (350γρ)", // New key for Premium Cuts
-    forTwoPersons: "For 2 (700γρ)", // New key for Premium Cuts
+    forOnePerson: "For 1 (350gr)", // New key for Premium Cuts
+    forTwoPersons: "For 2 (700gr)", // New key for Premium Cuts
     ask: "Ask Staff", // For variable price items like fish of the day // Add specific price tier labels if needed by the UI
     special: "SPECIAL",
     premium: "PREMIUM",
