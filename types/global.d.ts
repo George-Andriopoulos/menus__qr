@@ -1,9 +1,8 @@
-// types/index.ts
+// types/casaPlaya.ts (or wherever you keep your Casa Playa specific types)
 
 /**
+ * Base Price Information - Copied from original types/index.ts for reference
  * Represents the structured price information for a menu item.
- * Allows for single price, double price, or a base price.
- * Includes optional unit and modifier (like '+').
  */
 export interface PriceInfo {
   single?: number; // Price for single serving (optional)
@@ -14,6 +13,18 @@ export interface PriceInfo {
 }
 
 /**
+ * Extended Price Information for Casa Playa.
+ * Adds specific price tiers (special, premium) and allows "ASK" modifier.
+ */
+export interface CasaPlayaPriceInfo extends PriceInfo {
+  special?: number; // Price for special tier (e.g., drinks)
+  premium?: number; // Price for premium tier (e.g., drinks)
+  // Override modifier to be more specific if needed, or keep as string
+  modifier?: string | "ASK"; // Allows '+' or specific string "ASK"
+}
+
+/**
+ * Base Menu Item - Copied from original types/index.ts for reference
  * Represents a single item on the menu.
  */
 export interface MenuItem {
@@ -24,6 +35,15 @@ export interface MenuItem {
 }
 
 /**
+ * Extended Menu Item for Casa Playa.
+ * Uses the extended CasaPlayaPriceInfo.
+ */
+export interface CasaPlayaMenuItem extends MenuItem {
+  price: CasaPlayaPriceInfo; // Use the extended price info for Casa Playa items
+}
+
+/**
+ * Base Menu Category - Copied from original types/index.ts for reference
  * Represents a category in the menu (e.g., Hot Beverages, Snacks).
  */
 export interface MenuCategory {
@@ -31,10 +51,19 @@ export interface MenuCategory {
   name: { en: string; gr: string }; // Category name in English and Greek
   image: string; // Representative image URL for the category card
   items: MenuItem[]; // Array of menu items belonging to this category
-  images?: string[];
+  images?: string[]; // Optional array of images for gallery-like categories
 }
 
 /**
+ * Extended Menu Category for Casa Playa.
+ * Contains an array of CasaPlayaMenuItem.
+ */
+export interface CasaPlayaMenuCategory extends MenuCategory {
+  items: CasaPlayaMenuItem[]; // Items must conform to the extended Casa Playa item type
+}
+
+/**
+ * Base Translation Set - Copied from original types/index.ts for reference
  * Defines the structure for translation strings used in the UI.
  */
 export interface TranslationSet {
@@ -54,6 +83,18 @@ export interface TranslationSet {
 }
 
 /**
+ * Extended Translation Set for Casa Playa.
+ * Adds labels for specific price tiers and the "ASK" modifier.
+ */
+export interface CasaPlayaTranslationSet extends TranslationSet {
+  // Add keys specific to Casa Playa translations
+  ask?: string; // Label for 'Ask Staff' price indicator
+  special?: string; // Label for SPECIAL price column header (if needed)
+  premium?: string; // Label for PREMIUM price column header (if needed)
+}
+
+/**
+ * Base Translations - Copied from original types/index.ts for reference
  * Defines the structure for the main translations object,
  * mapping language codes ('en', 'gr') to their respective TranslationSet.
  */
@@ -61,3 +102,17 @@ export interface Translations {
   en: TranslationSet;
   gr: TranslationSet;
 }
+
+/**
+ * Extended Translations for Casa Playa.
+ * Uses the extended CasaPlayaTranslationSet for each language.
+ */
+export interface CasaPlayaTranslations extends Translations {
+  en: CasaPlayaTranslationSet; // English translations use the extended set
+  gr: CasaPlayaTranslationSet; // Greek translations use the extended set
+}
+
+// You can now use these CasaPlaya specific types in your constants/casaPlaya.ts file:
+// import { CasaPlayaMenuCategory, CasaPlayaTranslations } from "@/types/casaPlaya"; // Adjust import path
+// export const mockMenuCategories: CasaPlayaMenuCategory[] = [ ... ];
+// export const translations: CasaPlayaTranslations = { ... };

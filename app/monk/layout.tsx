@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   title: "Monk",
   description: "Coffee that's always the way you like",
   icons: {
-    icon: "/monk/logo_menu.webp", // Correct path to icon in public/monk/
-    shortcut: "/monk/logo_menu.webp", // For older browsers
-    apple: "/monk/logo_menu.webp", // For Apple touch icons
+    icon: "/casa_playa/casa_playa.webp",
+    shortcut: "/casa_playa/casa_playa.webp",
+    apple: "/casa_playa/casa_playa.webp",
   },
 };
 

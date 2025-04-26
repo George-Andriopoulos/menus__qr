@@ -16,9 +16,9 @@ const roboto_slab = Roboto_Slab({
 export const metadata: Metadata = {
   title: "Casa Playa",
   icons: {
-    icon: "/monk/logo_menu.webp", // Correct path to icon in public/monk/
-    shortcut: "/monk/logo_menu.webp", // For older browsers
-    apple: "/monk/logo_menu.webp", // For Apple touch icons
+    icon: "/casa_playa/casa_playa.webp", // Correct path to icon in public/monk/
+    shortcut: "/casa_playa/casa_playa.webp", // For older browsers
+    apple: "/casa_playa/casa_playa.webp", // For Apple touch icons
   },
 };
 
