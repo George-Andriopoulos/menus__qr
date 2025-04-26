@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-// --- CORRECTED TYPE IMPORTS ---
+// Import Casa Playa specific Types
 import {
   CasaPlayaMenuCategory,
   CasaPlayaTranslationSet,
@@ -19,7 +19,6 @@ import {
   CasaPlayaMenuItem,
 } from "@/types/casaPlaya"; // Adjust path if needed
 
-// --- Define props with specific Casa Playa types ---
 interface MenuModalProps {
   category: CasaPlayaMenuCategory | null;
   onClose: () => void;
@@ -34,6 +33,7 @@ const formatPrice = (
   modifier?: string
 ): string => {
   if (price === undefined || price === null || isNaN(price)) return "";
+  // Ensure '€' is appended correctly
   return `${modifier || ""}${price.toFixed(2)}${unit || ""}`;
 };
 
@@ -44,7 +44,7 @@ const MenuModal: React.FC<MenuModalProps> = ({
   lang,
   t,
 }) => {
-  // Gallery state and handlers (remain unchanged from your original code)
+  // Gallery state and handlers (remain unchanged)
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -136,8 +136,9 @@ const MenuModal: React.FC<MenuModalProps> = ({
 
   if (!isOpen || !category) return null;
 
-  // --- CASE 1: CATEGORY HAS IMAGES (Gallery Mode - Unchanged from your original styling) ---
+  // --- CASE 1: GALLERY (Unchanged) ---
   if (category.images && category.images.length > 0) {
+    // ... Gallery rendering logic remains the same ...
     return (
       <Dialog
         open={isOpen}
@@ -211,65 +212,47 @@ const MenuModal: React.FC<MenuModalProps> = ({
     );
   }
 
-  // --- CASE 2: NORMAL MENU MODAL (Original Styling Preserved) ---
-  const showSingleDoubleHeaders = category.items.some(
-    (item) =>
-      (item.price as CasaPlayaPriceInfo).single !== undefined ||
-      (item.price as CasaPlayaPriceInfo).double !== undefined
-  );
+  // --- CASE 2: NORMAL MENU MODAL ---
+  // --- REMOVED showSingleDoubleHeaders calculation ---
 
   return (
     <Dialog
       open={isOpen}
       onOpenChange={(open) => !open && onClose()}>
-      {/* Using original DialogContent className */}
       <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl bg-[url('/monk/monk_modal_bg.webp')] bg-cover bg-center bg-no-repeat border-gray-700 text-[#fffdfe] max-h-[85vh] sm:max-h-[80vh] flex flex-col rounded-lg p-0">
-        {/* Using original DialogHeader className */}
         <DialogHeader className="border-b border-gray-700 p-4 flex-shrink-0">
           <DialogTitle className="text-xl sm:text-2xl font-semibold text-[#1F1F1F] text-center">
             {category.name[lang] || category.name["en"]}
           </DialogTitle>
         </DialogHeader>
 
-        {/* Using original Single/Double Headers section */}
-        {showSingleDoubleHeaders && (
-          <div className="grid grid-cols-3 bg-[#ae997a] gap-x-3 sm:gap-x-4 px-3 sm:px-4 pt-3 pb-2 text-xs sm:text-sm font-semibold text-[#fffdfe] sticky top-0 z-10">
-            <div className="col-span-1 uppercase tracking-wider"></div>
-            <div className="col-span-1 text-right pr-1 uppercase tracking-wider">
-              {t("single")}
-            </div>
-            <div className="col-span-1 text-right pr-1 uppercase tracking-wider">
-              {t("double")}
-            </div>
-          </div>
-        )}
+        {/* --- REMOVED Conditional Headers --- */}
 
-        {/* Using original scrollable div structure */}
+        {/* --- Scrollable div now ALWAYS has top padding --- */}
         <div
           className={cn(
-            "flex-grow overflow-y-auto space-y-1 no-scrollbar px-1 sm:px-2 pb-2",
-            !showSingleDoubleHeaders && "pt-3 sm:pt-4"
+            "flex-grow overflow-y-auto space-y-1 no-scrollbar px-1 sm:px-2 pb-2 pt-3 sm:pt-4" // Always add padding top
           )}>
           {(category.items as CasaPlayaMenuItem[]).map((item) => {
             const priceInfo = item.price as CasaPlayaPriceInfo;
             const isPersonPrice =
               priceInfo.forOnePerson !== undefined ||
               priceInfo.forTwoPersons !== undefined;
+            // --- NEW: Check for single/double price specifically for inline rendering ---
+            const isSingleDoubleInline = priceInfo.single !== undefined; // Check if single exists
 
             return (
+              // --- MODIFIED: Always use flex layout ---
               <div
                 key={item.id}
                 className={cn(
                   "p-3 hover:bg-[#ae997a]/90 transition-colors duration-150 mx-1 rounded",
-                  showSingleDoubleHeaders
-                    ? "grid grid-cols-3 gap-x-3 sm:gap-x-4 items-center"
-                    : "flex items-center justify-between gap-x-4" // Use justify-between for flex layout
+                  "flex items-center justify-between gap-x-4" // Always use flex
                 )}>
-                {/* Item Name and Description (Original structure) */}
+                {/* Item Name and Description - Always use flex-grow */}
                 <div
                   className={cn(
-                    "flex flex-col justify-center",
-                    showSingleDoubleHeaders ? "col-span-1" : "flex-grow"
+                    "flex flex-col justify-center flex-grow" // Always flex-grow
                   )}>
                   <h4 className="text-sm sm:text-base font-medium text-[#4B3621]">
                     {item.name[lang] || item.name["en"]}
@@ -281,54 +264,49 @@ const MenuModal: React.FC<MenuModalProps> = ({
                   )}
                 </div>
 
-                {/* Price Rendering */}
-                {showSingleDoubleHeaders ? (
-                  // Original Single/Double rendering
-                  <>
-                    <div className="col-span-1 text-right text-sm sm:text-base text-[#4B3621] font-medium pr-1">
+                {/* --- MODIFIED Price Rendering Logic (Single Column) --- */}
+                <div className="text-[#4B3621] font-medium text-sm sm:text-base flex-shrink-0 text-right">
+                  {isPersonPrice ? (
+                    <div className="flex flex-col">
+                      <span>
+                        {`${t("forOnePerson") || "For 1"}: ${formatPrice(
+                          priceInfo.forOnePerson,
+                          priceInfo.unit
+                        )}`}
+                      </span>
+                      <span>
+                        {`${t("forTwoPersons") || "For 2"}: ${formatPrice(
+                          priceInfo.forTwoPersons,
+                          priceInfo.unit
+                        )}`}
+                      </span>
+                    </div>
+                  ) : isSingleDoubleInline ? ( // Check for single/double to display inline
+                    <span className="whitespace-nowrap">
+                      {" "}
+                      {/* Prevent wrapping */}
+                      {formatPrice(priceInfo.single, priceInfo.unit)}
+                      {priceInfo.double !== undefined &&
+                        ` / ${formatPrice(
+                          priceInfo.double,
+                          priceInfo.unit
+                        )}`}{" "}
+                      {/* Conditionally add double */}
+                    </span>
+                  ) : priceInfo.modifier === "ASK" ? (
+                    <span>{t("ask") || "Ask Staff"}</span>
+                  ) : (
+                    // Fallback to base price
+                    <span>
                       {formatPrice(
-                        priceInfo.single ?? priceInfo.base,
+                        priceInfo.base,
                         priceInfo.unit,
                         priceInfo.modifier
                       )}
-                    </div>
-                    <div className="col-span-1 text-right text-sm sm:text-base text-[#4B3621] font-medium pr-1">
-                      {formatPrice(priceInfo.double, priceInfo.unit)}
-                    </div>
-                  </>
-                ) : (
-                  <div className="text-[#4B3621] font-medium text-sm sm:text-base flex-shrink-0 text-right">
-                    {/* Check for 'forPerson' price first */}
-                    {isPersonPrice ? (
-                      // --- MODIFIED: Use flex-col to stack lines ---
-                      <div className="flex flex-col">
-                        <span>
-                          {`${t("forOnePerson") || "For 1"}: ${formatPrice(
-                            priceInfo.forOnePerson,
-                            priceInfo.unit
-                          )}`}
-                        </span>
-                        <span>
-                          {`${t("forTwoPersons") || "For 2"}: ${formatPrice(
-                            priceInfo.forTwoPersons,
-                            priceInfo.unit
-                          )}`}
-                        </span>
-                      </div>
-                    ) : // --- END MODIFICATION ---
-                    priceInfo.modifier === "ASK" ? (
-                      <span>{t("ask") || "Ask Staff"}</span>
-                    ) : (
-                      <span>
-                        {formatPrice(
-                          priceInfo.base,
-                          priceInfo.unit,
-                          priceInfo.modifier
-                        )}
-                      </span>
-                    )}
-                  </div>
-                )}
+                    </span>
+                  )}
+                </div>
+                {/* --- END MODIFIED Price Rendering Logic --- */}
               </div>
             );
           })}

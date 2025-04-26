@@ -1136,19 +1136,19 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
     ],
   },
   // --- Gallery (Example, adapt as needed) ---
-  {
-    id: "photo-gallery",
-    name: { en: "Gallery", gr: "Γκαλερί" },
-    image: "/casa-playa/gallery.webp",
-    items: [],
-    images: [
-      "/casa-playa/gallery/1.webp",
-      "/casa-playa/gallery/2.webp",
-      "/casa-playa/gallery/3.webp",
-      "/casa-playa/gallery/4.webp",
-      "/casa-playa/gallery/5.webp",
-    ],
-  },
+  // {
+  //   id: "photo-gallery",
+  //   name: { en: "Gallery", gr: "Γκαλερί" },
+  //   image: "/casa-playa/gallery.webp",
+  //   items: [],
+  //   images: [
+  //     "/casa-playa/gallery/1.webp",
+  //     "/casa-playa/gallery/2.webp",
+  //     "/casa-playa/gallery/3.webp",
+  //     "/casa-playa/gallery/4.webp",
+  //     "/casa-playa/gallery/5.webp",
+  //   ],
+  // },
 ];
 
 // Translations object for Casa Playa
