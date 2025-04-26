@@ -1,25 +1,24 @@
 // constants/casaPlaya.ts
+
+import { CasaPlayaMenuCategory, CasaPlayaTranslations } from "@/types/global";
+
 // Import Casa Playa specific types
-import {
-  CasaPlayaMenuCategory,
-  CasaPlayaTranslations,
-} from "@/types/casaPlaya"; // Adjust path if needed
 
 // Carousel images (Placeholders for Casa Playa)
-export const mockCarouselImages: string[] = [
-  "https://placehold.co/800x400/0284C7/FFFFFF?text=Casa+Playa+Beach", // Sky Blue
-  "https://placehold.co/800x400/38BDF8/FFFFFF?text=Seafront+Dining", // Lighter Sky Blue
-  "https://placehold.co/800x400/FDBA74/374151?text=Delicious+Food", // Orange Sand
-  "https://placehold.co/800x400/FDE68A/374151?text=Relax+Enjoy", // Lighter Sand
-];
+// export const mockCarouselImages: string[] = [
+//   "https://placehold.co/800x400/0284C7/FFFFFF?text=Casa+Playa+Beach", // Sky Blue
+//   "https://placehold.co/800x400/38BDF8/FFFFFF?text=Seafront+Dining", // Lighter Sky Blue
+//   "https://placehold.co/800x400/FDBA74/374151?text=Delicious+Food", // Orange Sand
+//   "https://placehold.co/800x400/FDE68A/374151?text=Relax+Enjoy", // Lighter Sand
+// ];
 
 // Menu Data for Casa Playa
 export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   // --- Brunch (10:00 - 12:30) ---
   {
     id: "brunch",
-    name: { en: "Brunch (10:00 - 12:30)", gr: "Brunch (10:00 - 12:30)" },
-    image: "/casa-playa/brunch.webp",
+    name: { en: "Brunch (10:00 - 12:30)", gr: "Μπραντς (10:00 - 12:30)" },
+    image: "/casa_playa/branch.webp",
     items: [
       {
         id: "br1",
@@ -63,7 +62,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "healthy-vibes",
     name: { en: "Healthy vibes", gr: "Υγιεινές Επιλογές" },
-    image: "/casa-playa/healthy.webp",
+    image: "/casa_playa/healthy_vibes.webp",
     items: [
       {
         id: "hv1",
@@ -104,7 +103,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "tastes-greece",
     name: { en: "Tastes of Greece from Land & Sea", gr: "Γεύσεις Ελλάδας" },
-    image: "/casa-playa/greek_tastes.webp",
+    image: "/casa_playa/tastes_of_greece.webp",
     items: [
       {
         id: "tg1",
@@ -172,7 +171,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "salads",
     name: { en: "Salads", gr: "Σαλάτες" },
-    image: "/casa-playa/salads.webp",
+    image: "/casa_playa/salads.webp",
     items: [
       {
         id: "sl1",
@@ -225,7 +224,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "on-the-grill",
     name: { en: "On The Grill", gr: "Στη Σχάρα" },
-    image: "/casa-playa/grill.webp",
+    image: "/casa_playa/grill.webp",
     items: [
       {
         id: "gr1",
@@ -283,14 +282,14 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   // --- Premium Cuts ---
   {
     id: "premium-cuts",
-    name: { en: "Premium Cuts", gr: "Premium Κοπές" },
-    image: "/casa-playa/premium_cuts.webp",
+    name: { en: "Premium Cuts", gr: "Εκλεκτές Κοπές" },
+    image: "/casa_playa/premium_cuts.webp",
     items: [
       {
         id: "pc1",
         name: {
-          en: "Inside Skirt Black Angus (350gr / 700gr)",
-          gr: "Inside Skirt Black Angus (350γρ / 700γρ)",
+          en: "Inside Skirt Black Angus",
+          gr: "Σπάλα Black Angus",
         },
         description: {
           en: "Served with jacket potatoes & mixed salad leaves",
@@ -341,7 +340,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "pasta",
     name: { en: "Pasta", gr: "Ζυμαρικά" },
-    image: "/casa-playa/pasta.webp",
+    image: "/casa_playa/pasta.webp",
     items: [
       {
         id: "ps1",
@@ -391,7 +390,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "traditional",
     name: { en: "Traditional dishes", gr: "Παραδοσιακά πιάτα" },
-    image: "/casa-playa/traditional.webp",
+    image: "/casa_playa/traditional.webp",
     items: [
       {
         id: "td1",
@@ -443,8 +442,8 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   // --- Burgers ---
   {
     id: "burgers",
-    name: { en: "Burgers", gr: "Burgers" },
-    image: "/casa-playa/burgers.webp",
+    name: { en: "Burgers", gr: "Μπέργκερς" },
+    image: "/casa_playa/burgers.webp",
     items: [
       {
         id: "bg1",
@@ -491,7 +490,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "snacks",
     name: { en: "Snacks", gr: "Σνακς" },
-    image: "/casa-playa/snacks.webp",
+    image: "/casa_playa/snacks.webp",
     items: [
       {
         id: "sn1",
@@ -556,7 +555,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "asian-food",
     name: { en: "Asian Food", gr: "Ασιατική Κουζίνα" },
-    image: "/casa-playa/asian.webp",
+    image: "/casa_playa/asian_food.webp",
     items: [
       {
         id: "af1",
@@ -612,7 +611,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "kids-menu",
     name: { en: "Kids menu", gr: "Παιδικό μενού" },
-    image: "/casa-playa/kids.webp",
+    image: "/casa_playa/kids_menu.webp",
     items: [
       {
         id: "km1",
@@ -647,7 +646,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "desserts",
     name: { en: "Desserts", gr: "Επιδόρπια" },
-    image: "/casa-playa/desserts.webp",
+    image: "/casa_playa/desserts.webp",
     items: [
       {
         id: "ds1",
@@ -697,7 +696,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "ice-cream",
     name: { en: "Homemade Ice Cream", gr: "Σπιτικό Παγωτό" },
-    image: "/casa-playa/icecream.webp",
+    image: "/casa_playa/ice_cream.webp",
     items: [
       {
         id: "ic1",
@@ -725,8 +724,8 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   // --- Milk Shakes ---
   {
     id: "milk-shakes",
-    name: { en: "Milk Shakes", gr: "Milk Shakes" },
-    image: "/casa-playa/milkshakes.webp",
+    name: { en: "Milk Shakes", gr: "Μιλκ Σέϊκς" },
+    image: "/casa_playa/milkshake.webp",
     items: [
       {
         id: "ms1",
@@ -743,7 +742,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "coffee",
     name: { en: "Coffee", gr: "Καφέδες" },
-    image: "/casa-playa/coffee.webp",
+    image: "/casa_playa/coffee.webp",
     items: [
       {
         id: "cf1",
@@ -811,7 +810,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "refreshments",
     name: { en: "Refreshments", gr: "Αναψυκτικά" },
-    image: "/casa-playa/refreshments.webp",
+    image: "/casa_playa/refreshments.webp",
     items: [
       {
         id: "rf1",
@@ -912,7 +911,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "juices",
     name: { en: "Fresh «energy» Juices", gr: "Φρέσκοι χυμοί «ενέργειας»" },
-    image: "/casa-playa/juices.webp",
+    image: "/casa_playa/fresh_juices.webp",
     items: [
       {
         id: "ju1",
@@ -959,7 +958,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "beers",
     name: { en: "Beer", gr: "Μπύρες" },
-    image: "/casa-playa/beers.webp",
+    image: "/casa_playa/beers.webp",
     items: [
       {
         id: "be1",
@@ -1045,7 +1044,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "alcoholic-drinks",
     name: { en: "Alcoholic Drinks", gr: "Αλκοολούχα Ποτά" },
-    image: "/casa-playa/drinks.webp",
+    image: "/casa_playa/alcohol.webp",
     items: [
       {
         id: "ad1",
@@ -1101,7 +1100,7 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   {
     id: "champagne",
     name: { en: "Champagne", gr: "Σαμπάνια" },
-    image: "/casa-playa/champagne.webp",
+    image: "/casa_playa/champagne.webp",
     items: [
       {
         id: "ch1",
@@ -1139,14 +1138,14 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
   // {
   //   id: "photo-gallery",
   //   name: { en: "Gallery", gr: "Γκαλερί" },
-  //   image: "/casa-playa/gallery.webp",
+  //   image: "/casa_playa/gallery.webp",
   //   items: [],
   //   images: [
-  //     "/casa-playa/gallery/1.webp",
-  //     "/casa-playa/gallery/2.webp",
-  //     "/casa-playa/gallery/3.webp",
-  //     "/casa-playa/gallery/4.webp",
-  //     "/casa-playa/gallery/5.webp",
+  //     "/casa_playa/gallery/1.webp",
+  //     "/casa_playa/gallery/2.webp",
+  //     "/casa_playa/gallery/3.webp",
+  //     "/casa_playa/gallery/4.webp",
+  //     "/casa_playa/gallery/5.webp",
   //   ],
   // },
 ];
@@ -1154,28 +1153,39 @@ export const casa_playa_MenuCategories: CasaPlayaMenuCategory[] = [
 // Translations object for Casa Playa
 export const translations: CasaPlayaTranslations = {
   en: {
-    // ... english translations ...
-    forOnePerson: "For 1",
-    forTwoPersons: "For 2",
-    // ... other english translations ...
+    headerTitle: "Casa Playa",
+    headerSubtitle: "", // Example subtitle
+    menuCategories: "Menu",
+    language: "Language",
+    ingredients: "Details", // Changed from Ingredients to Details/Description
+    price: "Price",
+    close: "Close",
+    orderNow: "Order Now", // Keep or change as needed
+    viewMenu: "View Menu",
+    beverages: "Beverages", // Keep or change as needed
+    single: "SINGLE", // For items like Espresso, Coffee sizes, Water sizes
+    double: "DOUBLE", // For items like Espresso, Coffee sizes, Water sizes, Premium Cuts for 2
+    forOnePerson: "For 1 (350γρ)", // New key for Premium Cuts
+    forTwoPersons: "For 2 (700γρ)", // New key for Premium Cuts
+    ask: "Ask Staff", // For variable price items like fish of the day // Add specific price tier labels if needed by the UI
+    special: "SPECIAL",
+    premium: "PREMIUM",
   },
   gr: {
-    headerTitle: "Casa Playa",
-    headerSubtitle: "Η απόδρασή σας στην παραλία",
+    headerTitle: "Casa Playa", // Keep or add Greek name if different
+    headerSubtitle: "", // Example Greek subtitle
     menuCategories: "Μενού",
     language: "Γλώσσα",
-    ingredients: "Λεπτομέρειες",
+    ingredients: "Λεπτομέρειες", // Changed from Συστατικά
     price: "Τιμή",
     close: "Κλείσιμο",
-    orderNow: "Παραγγείλετε",
+    orderNow: "Παραγγείλετε", // Example Greek translation
     viewMenu: "Δείτε το Μενού",
-    beverages: "Ροφήματα",
-    single: "ΜΟΝΟ",
-    double: "ΔΙΠΛΟ",
-    // --- Ensure these lines are exactly as follows ---
-    forOnePerson: "Για ένα άτομο", // Should be this exact string
-    forTwoPersons: "Για δύο άτομα", // Should be this exact string
-    // --- End Verification ---
+    beverages: "Ροφήματα", // Keep or change as needed
+    single: "ΜΟΝΟ", // Updated Greek translation
+    double: "ΔΙΠΛΟ", // Updated Greek translation
+    forOnePerson: "Για έναν (350γρ)", // Updated Greek translation
+    forTwoPersons: "Για δύο (700γρ)", // Updated Greek translation
     ask: "Ρωτήστε",
     special: "SPECIAL", // Consider translating if needed
     premium: "PREMIUM", // Consider translating if needed

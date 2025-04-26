@@ -4,12 +4,12 @@
 import { MenuCategory, Translations } from "@/types/global";
 
 // Carousel images (update as needed)
-export const mockCarouselImages: string[] = [
-  "https://placehold.co/800x400/FBBF24/374151?text=Monk+Coffee",
-  "https://placehold.co/800x400/FCD34D/374151?text=Specialty+Coffee",
-  "https://placehold.co/800x400/FDBA74/374151?text=Cozy+Atmosphere",
-  "https://placehold.co/800x400/FDE68A/374151?text=Fresh+Snacks",
-];
+// export const mockCarouselImages: string[] = [
+//   "https://placehold.co/800x400/FBBF24/374151?text=Monk+Coffee",
+//   "https://placehold.co/800x400/FCD34D/374151?text=Specialty+Coffee",
+//   "https://placehold.co/800x400/FDBA74/374151?text=Cozy+Atmosphere",
+//   "https://placehold.co/800x400/FDE68A/374151?text=Fresh+Snacks",
+// ];
 
 // Updated Menu Data based on comparison of DOCX files
 export const mockMenuCategories: MenuCategory[] = [

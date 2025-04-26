@@ -24,17 +24,17 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
       {/* Render title only if it exists */}
       {title && (
         <Image
-          src="/casa_playa/casa_playa.webp"
+          src="/casa_playa/casa-playa.webp"
           alt="Logo Monk"
-          width={250}
-          height={250}
+          width={450}
+          height={450}
           quality={100}
           className="mx-auto mt-10 "
         />
       )}
       {/* Render subtitle only if it exists */}
       {subtitle && (
-        <h3 className="text-lg sm:text-xl text-[#fffdfe] mt-4 px-2">
+        <h3 className="text-lg sm:text-xl text-[#F7931E] mt-4 px-2">
           {subtitle}
         </h3>
       )}
