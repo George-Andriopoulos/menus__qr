@@ -20,6 +20,28 @@ export const metadata: Metadata = {
     shortcut: "/casa_playa/casa_playa.webp", // For older browsers
     apple: "/casa_playa/casa_playa.webp", // For Apple touch icons
   },
+  referrer: "origin-when-cross-origin",
+  openGraph: {
+    title: "Casa Playa",
+
+    // url: "https://devoverflow.dev",
+    // siteName: "Dev Overflow",
+    images: [
+      {
+        url: "/casa_playa/casa_playa.webp",
+        width: 1200,
+        height: 630,
+        alt: "Casa Playa OG Banner",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Casa Playa on Twitter",
+    images: ["/casa_playa/casa_playa.webp"],
+  },
 };
 
 /**

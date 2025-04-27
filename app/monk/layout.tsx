@@ -17,9 +17,31 @@ export const metadata: Metadata = {
   title: "Monk",
   description: "Coffee that's always the way you like",
   icons: {
-    icon: "/casa_playa/casa_playa.webp",
-    shortcut: "/casa_playa/casa_playa.webp",
-    apple: "/casa_playa/casa_playa.webp",
+    icon: "/monk/logo.webp",
+    shortcut: "/monk/logo.webp",
+    apple: "/monk/logo.webp",
+  },
+  referrer: "origin-when-cross-origin",
+  openGraph: {
+    title: "Monk",
+
+    // url: "https://devoverflow.dev",
+    // siteName: "Dev Overflow",
+    images: [
+      {
+        url: "/monk/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Monk OG Banner",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Monk on Twitter",
+    images: ["/monk/logo.webp"],
   },
 };
 
